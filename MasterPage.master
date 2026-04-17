@@ -1,0 +1,177 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+<%@ Register Src="~/Controls/UpdateProgressUc.ascx" TagName="UpdateProgressUc" TagPrefix="uc2" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<script language="javascript" src="../Scripts/Scripts.js" type="text/javascript"></script>
+
+<script language="javascript" type="text/javascript">
+    javascript: window.history.forward(1);
+
+</script>
+ <style type="text/css">
+      
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: #eef1f5;
+            color: #000;
+        }
+        .topbar {
+            background: #111;
+            color: #fff;
+            padding: 18px 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .page-content {
+            width: 88%;
+            margin: auto;
+            margin-top: 80px;
+        }
+ /* ✅ HEADER BAR — fixed position, bottom-rounded only */
+.LblUser {
+    position: fixed;
+    top: 0;
+    left: 260px;              /* stay aligned with sidebar */
+    width: 82%;               /* slightly narrower */
+    height: 55px;
+
+    background: rgba(0, 0, 0, 0.9);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 0 25px;
+    font-size: 15px;
+
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 28px;
+    border-bottom-right-radius: 28px;
+
+    border-left: 1px solid rgba(0, 255, 255, 0.25);
+    border-right: 1px solid rgba(0, 255, 255, 0.25);
+    border-bottom: 2px solid rgba(0, 255, 255, 0.35);
+
+    box-shadow: 0 4px 12px rgba(0, 255, 255, 0.25);
+    backdrop-filter: blur(6px);
+    z-index: 2000;
+}
+.LblUser11 {
+    background: rgba(0, 0, 0, 0.9);
+    color: #00c5d9;
+    text-align: center;
+    padding: 8px 0;
+    font-size: 12pt;
+    width: 100%;
+}
+        .footer {
+            margin-top: 90px;
+            background: #111;
+            color: #aaa;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title> Page</title>
+</head>
+<body runat="server" id="MPage" leftmargin="0" topmargin="0">
+    <form id="form1" runat="server">
+
+        <asp:ScriptManager ID="ScriptManager1" runat="server" AsyncPostBackTimeout="720000">
+        </asp:ScriptManager>
+        <uc2:UpdateProgressUc ID="UpdateProgressUc1" runat="server" />
+        <asp:UpdatePanel ID="UpdatePanelHdr3" runat="server" UpdateMode="Conditional">
+            <ContentTemplate>
+
+                <table cellpadding="0" cellspacing="0" style="width: 100%; height: 100%; vertical-align: top">
+                    <tr>
+                        
+<td style="vertical-align: top; width: 100%; background-color: transparent;">
+                            <%-- <asp:Label ID="lblDate" runat="server" Text="25-Feb-2023"  </asp:Label>--%>
+                            <asp:Label ID="lblUserID" runat="server" Font-Bold="False" Text="User" CssClass="LblUser" Width="98%" ></asp:Label>
+                            
+                            <asp:Label ID="Label3" runat="server" Font-Bold="True" Text="." CssClass="Button1" Width="98%" Height="4px" ></asp:Label>
+                            
+                        </td>
+                    </tr>
+                        
+</td>
+                    <tr>
+                        
+<td id="tdCenter" runat="server" colspan="1" style="width: 100%; vertical-align: top; background-color: transparent;">
+                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </td>
+                    </tr>
+                        <tr>
+                        <td style="vertical-align: top; width: 100%; background-color: transparent ; text-align:left">
+                            <%-- <asp:Label ID="lblDate" runat="server" Text="25-Feb-2023"  </asp:Label>--%>
+                            <asp:Label ID="Label11" runat="server" Font-Bold="False" Text="For Help 0333-3525115   |  Info@Logix-soft.com  " CssClass="LblUser11" Width="98%" ></asp:Label>
+     
+                    <tr>
+                        <td width="2%" style="vertical-align: top; text-align: left; background-color:#F1F5F4">
+                            
+
+                        </td>
+                        <td id="Td1" runat="server" style="background-color:#339A99;width: 15%; background-repeat: no-repeat; border-top-width: thin; border-left-width: thin; border-left-color: #ff9933; border-bottom-width: thin; border-bottom-color: #ff9933; border-top-color: #ff9933; border-right-width: thin; border-right-color: #ff9933; vertical-align: top;"
+                            valign="top">
+                            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </td>
+
+                           <tr>
+    <td width="2%" style="vertical-align: top; text-align: left; background-color:#339A99">
+        <asp:Button ID="btnHide" runat="server" Font-Bold="True" Font-Size="16pt" Height="100%"
+            OnClick="btnHide_Click" Text="<" ValidationGroup="grp2" Width="100%" />
+    </td>
+    <td id="td2" runat="server" colspan="1" style="width: 98%; vertical-align: top; background-color: transparent;">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
+        </asp:ContentPlaceHolder>
+    </td>
+</tr>
+                        </td>
+                    </tr>
+                        </td>
+                    </tr>
+                </table>
+
+            </ContentTemplate>
+            <Triggers>
+
+</Triggers>
+        </asp:UpdatePanel>
+        <script>
+            let slideIndex = 0;
+            showSlides();
+
+            function showSlides() {
+                let i;
+                let slides = document.getElementsByClassName("mySlides");
+                let dots = document.getElementsByClassName("dot");
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                slideIndex++;
+                if (slideIndex > slides.length) { slideIndex = 1 }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex - 1].style.display = "block";
+                dots[slideIndex - 1].className += " active";
+                setTimeout(showSlides, 4000); // Change image every 2 seconds
+            }
+        </script>
+
+    </form>
+</body>
+</html>

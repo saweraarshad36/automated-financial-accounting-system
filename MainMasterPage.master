@@ -1,0 +1,244 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MainMasterPage.master.cs"
+    Inherits="Main_MasterPage" %>
+
+<%@ Register Src="~/Controls/UpdateProgressUc.ascx" TagName="UpdateProgressUc" TagPrefix="uc2" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<script language="javascript" src="../Scripts/Scripts.js" type="text/javascript"></script>
+
+<script language="javascript" type="text/javascript">
+    javascript: window.history.forward(1);
+
+</script>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>AFMS.com</title>
+    <link rel="stylesheet" href="App_Themes/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="App_Themes/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="App_Themes/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="App_Themes/css/slick.css" />
+    <link rel="stylesheet" href="App_Themes/css/slicknav.css" />
+    <link rel="stylesheet" href="App_Themes/css/style.css" />
+
+
+    <!-- toastr-->
+<%--    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet" />--%>
+     <link href="App_Themes/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet" />
+ <%--   <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />--%>
+    <link href="App_Themes/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
+
+   <div class="center-links">
+    <a href="#">Home</a>
+    <a href="contact.aspx">Contact</a>
+    <a href="About.aspx">About Us</a>
+    <a href="Login.aspx">Login</a>
+</div>
+
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+   <style type="text/css">
+       .center-links {
+    position: absolute;
+    top: 25px;                 
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 25px;
+    z-index: 20;
+}
+
+.center-links a {
+    background: white;
+    color: black;
+    text-decoration: none;
+    padding: 10px 26px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 15px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+    transition: all 0.3s ease;
+}
+
+.center-links a:hover {
+    background: #e5e7eb;
+    transform: translateY(-3px);
+}
+    .main-header-area {
+        background-color: #000 !important;
+    }
+
+    .main-menu ul li a {
+        color: #fff !important;
+    }
+
+    .main-menu ul li a:hover {
+        color: #f5b342 !important; 
+    }
+
+    /* Footer black */
+    .footer {
+        background-color: #000 !important;
+        color: #fff !important;
+    }
+
+    .footer a {
+        color: #fff !important;
+    }
+
+    .footer a:hover {
+        color: #f5b342 !important;
+    }
+
+    .footer_title {
+        color: #f5b342 !important;
+    }
+
+    .copy_right {
+        color: #ccc !important;
+    }
+
+    /* Existing label style */
+    .Lbl {
+        font-family: Arial;
+        font-size: 10pt;
+        color: Black;
+        text-align: left;
+    }
+
+</style>
+
+ 
+</head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+<body leftmargin="0" topmargin="0">
+    <form id="form1" runat="server">
+        <div>
+            <asp:ScriptManager ID="ScriptManager1" runat="server" AsyncPostBackTimeout="720000">
+            </asp:ScriptManager>
+            <uc2:UpdateProgressUc ID="UpdateProgressUc1" runat="server" />
+            <table cellpadding="0" cellspacing="0" style="width: 100%; height: 100px;">
+
+                <tr>
+                    <td align="center" style="width: 100%;">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </td>
+                </tr>
+
+
+            </table>
+
+            <%-- <table cellpadding="0" cellspacing="0" style="width: 100%; height: 50px;">
+                <tr>
+                    <td width="98%" align="center">
+                        <asp:Label ID="Label1" runat="server" CssClass="BoxTitle" Font-Bold="False" Font-Italic="False"
+                            Font-Names="Calibri" Font-Size="11pt" Text="Help Line: 03333525115" Width="100%"
+                            BackColor="#90A4AE"></asp:Label><br />
+                        <asp:Label ID="Label2" runat="server" CssClass="BoxTitle" Font-Bold="False" Font-Italic="False"
+                            Font-Names="Verdana" Font-Size="11pt" Text="E-mail: abc@xyz.com" Width="100%"
+                            BackColor="#90A4AE"></asp:Label></td>
+                </tr>
+            </table>--%>
+           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+<div class="footer"
+     style="width:100%;
+            background:#eef1f5;
+            border-top:1px solid #eef1f5;
+            box-shadow:0 -4px 20px rgba(0,0,0,0.15);
+            color:#eef1f5;
+            font-family:'Segoe UI', Arial, sans-serif;
+            padding:55px 60px 30px 60px;">
+
+  <div class="footer-container"
+       style="display:flex;
+              justify-content:space-between;
+              align-items:flex-start;
+              flex-wrap:wrap;
+              max-width:1280px;
+              margin:0 auto;">
+
+    <!-- GENERAL -->
+    <div class="footer_widget" style="flex:1 1 220px; min-width:200px;">
+      <h3 style="font-weight:700; font-size:18px; color:#eef1f5;">GENERAL</h3>
+      <div style="height:2px; width:45px; background:#eef1f5; margin:8px 0 18px;"></div>
+
+      <p><a href="Login.aspx" style="text-decoration:none; color:#eef1f5;">
+        <i class="fas fa-home"></i> Home</a></p>
+
+      <p><a href="about.aspx" style="text-decoration:none; color:#eef1f5;">
+        <i class="fas fa-info-circle"></i> About Us</a></p>
+
+      <p><a href="Contact.aspx" style="text-decoration:none; color:#eef1f5;">
+        <i class="fas fa-envelope"></i> Contact</a></p>
+    </div>
+
+    <!-- CONTACT DETAILS -->
+    <div class="footer_widget" style="flex:1 1 340px; min-width:280px;">
+      <h3 style="font-weight:700; font-size:18px; color:#eef1f5;">CONTACT DETAILS</h3>
+      <div style="height:2px; width:45px; background:#eef1f5; margin:8px 0 18px;"></div>
+
+      <p style="color:#eef1f5;">
+        <i class="fas fa-envelope"></i> <b>Email:</b> saweraarshad9921@gmail.com
+      </p>
+      <p style="color:#eef1f5;">
+        <i class="fas fa-phone"></i> <b>Phone:</b> 0335-9990470
+      </p>
+      <p style="color:#eef1f5;">
+        <i class="fas fa-map-marker-alt"></i>
+        <b>Head Office:</b> Suite # 608, 6th Floor Business Plaza,<br>
+        Mumtaz Hassan Road, Karachi
+      </p>
+    </div>
+
+    <!-- FOLLOW US -->
+    <div class="footer_widget" style="flex:1 1 240px; min-width:220px; text-align:center;">
+      <div style="margin-bottom:12px;">
+        <img src="../Images/afl3.jfif.png" alt="Logo"
+             style="width:90px; border-radius:12px;
+                    box-shadow:0 4px 12px rgba(0,0,0,0.25);" />
+      </div>
+
+      <h3 style="font-weight:700; font-size:18px; color:#eef1f5;">FOLLOW US</h3>
+      <div style="height:2px; width:45px; background:#eef1f5; margin:8px auto 15px;"></div>
+
+      <div style="font-size:20px;">
+        <a href="#" style="color:#eef1f5; margin:0 8px;"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" style="color:#eef1f5; margin:0 8px;"><i class="fab fa-twitter"></i></a>
+        <a href="#" style="color:#eef1f5; margin:0 8px;"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  
+
+
+  <!-- COPYRIGHT BAR -->
+  <div style="border-top:1px solid rgba(255,255,255,0.15); text-align:center; padding-top:12px; margin-top:40px; font-size:13px; color:#bbb;">
+    &copy; <script>document.write(new Date().getFullYear());</script> Logix-Soft. All rights reserved.
+  </div>
+</footer>
+
+
+
+                </div>
+                </div>
+      
+    </form>
+
+</body>
+
+</html>
