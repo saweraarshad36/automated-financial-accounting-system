@@ -1,0 +1,2095 @@
+h1
+{
+	font-family:Arial;
+	font-size:14px;
+	font-weight:bold;
+	color:Navy;
+	margin:0 0 0 0;
+}
+.Checkbox
+{
+	font-family: Verdana;
+	font-size: 8pt;
+    color: #005693;
+    font-weight: normal;
+}
+
+.LabelLeftMenu
+{
+	font-family: Verdana;
+    font-size: 12pt;
+    color: #005693;
+    font-weight: normal;
+    line-height:10px;
+}
+
+.h2
+{
+	font-family:Verdana;
+	font-size:12px;
+	font-weight:bold;
+	color:Navy;
+	margin:0 0 0 0;
+}
+
+h2
+{
+	font-family:Verdana;
+	font-size:12px;
+	font-weight:bold;
+	color:Navy;
+	margin:0 0 0 0;
+}
+.h1
+{
+	font-family:Verdana;
+	font-size:medium;
+	font-weight:bold;
+	color:Black;
+}
+td.ContentText
+{
+    font-family: Verdana;
+    font-size: 8pt;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.ContentText1
+{
+    font-family: Arial;
+    font-size: 8pt;
+    padding-left: 5px;
+    padding-right: 5px;
+    line-height:12px;
+	color:#005693;
+}
+td.ContentText2
+{
+    font-family: Verdana;
+    font-size: 8pt;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.ContentText1 a:hover
+{
+    font-family: Arial;
+    font-size: 8pt;
+    padding-left: 5px;
+    padding-right: 5px;
+    line-height:12px;
+    color:#005693;
+}
+
+.ContentText1 a:active
+{
+    font-family: Arial;
+    font-size: 8pt;
+    padding-left: 5px;
+    padding-right: 5px;
+    line-height:12px;
+    color:#005693;
+}
+
+
+
+.ContentTextNoPadding
+{
+    font-family: Arial;
+    font-size: 8pt;
+    line-height:16px;
+    color:#005693;
+}
+.ContentTextNoPadding a:hover
+{
+    font-family: Arial;
+    font-size: 8pt;
+    line-height:16px;
+    color:#005693;
+}
+
+.ContentTextNoPadding a:active
+{
+    font-family: Arial;
+    font-size: 8pt;
+    line-height:16px;
+    color:#005693;
+}
+
+
+
+
+A.FormHeaderlink
+{
+    font-family: Verdana;
+    font-size: 10pt;
+    color: #000080;
+    text-decoration : none;
+}
+
+A.FormHeaderlink:visited
+{
+    font-family: Verdana;
+    font-size: 10pt;
+    color: #87CEFA;
+    text-decoration : none;
+}
+
+A.FormHeaderlink:hover
+{
+    font-family: Verdana;
+    font-size: 10pt;
+    color: #FFFFFF;
+    text-decoration : underline; 
+}
+
+A.Formlink
+{
+    font-family: Verdana;
+    font-size: 10pt;
+    color: #000080;
+    text-decoration : none;
+}
+
+A.Formlink:visited
+{
+    font-family: Verdana;
+    font-size: 10pt;
+    color: #000080;
+}
+
+A.Formlink:hover
+{
+    font-family: Verdana;
+    font-size: 10pt;
+    color: #000000;
+}
+
+
+A.FormDisabledlink
+{
+    font-family: Arial;
+    font-size: 8pt;
+    padding-left: 5px;
+    padding-right: 5px;
+    line-height:12px;
+    color:#C0C0C0;
+}
+
+
+.PageHeaderText
+{
+    font-family: Arial,Verdana;
+    font-size: 12pt;
+    font-weight: bold;
+    color: #005693;
+}
+
+
+.ContentHeadingText
+{
+    font-family: Verdana,Arial;
+    font-size: 09pt;
+    color: #005693;
+    font-weight:bold;
+}
+
+.TabHeadingText
+{
+    font-family: Verdana,Arial;
+    font-size: 08pt;
+    color: #005693;
+    font-weight:bold;
+}
+
+
+.ContentText
+{
+    font-family: Arial,Verdana;
+    font-size: 8pt;
+    color: #005693;
+    font-weight: normal;
+    line-height:16pt;
+}
+
+
+
+
+
+
+
+
+
+
+.LeftMenuUnSelectedTab
+{
+    background-color:#ededed;
+}
+
+.LeftMenuSelectedTab
+{
+    background-color:#7FB8D5;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/****** To be used to display colums data in a table ******/
+.TableContentText
+{
+    font-family: Arial,Verdana;
+    font-size: 8pt;
+    color: #005693;
+    font-weight: normal;
+    line-height:16pt;
+}
+
+
+.TableContentText_Underlined
+{
+    font-family: Arial,Verdana;
+    font-size: 8pt;
+    color: #005693;
+    font-weight: normal;
+    line-height:16pt;
+    border-bottom: 1px solid #E7E3DA;
+}
+
+.TableContentText_Underlined_RightAligned
+{
+    font-family: Arial,Verdana;
+    font-size: 8pt;
+    color: #005693;
+    font-weight: normal;
+    line-height:16pt;
+    border-bottom: 1px solid #E7E3DA;
+    padding-right:5px;
+}
+/**********************************************************/
+
+
+/*********** Text formatting of the menu ******************/
+.MenuText1
+{
+    font-family: Verdana;
+    font-size: 8pt;
+    color: #005693;
+    font-weight: normal;
+    line-height:16pt;
+}
+.MenuTextSmall
+{
+    font-family: Verdana;
+    font-size: 7pt;
+    color: #005693;
+    font-weight: normal;
+    line-height:16pt;
+}
+/**********************************************************/
+
+
+
+
+
+/******* To be used for all Table Headers ********/
+
+.HeaderRowTop
+{
+    background-color:#BBDAEA;
+    font-family: Arial,Verdana;
+    font-size: 8pt;
+    color: #FFFFFF;
+    font-weight: bold;
+    height:20px;
+
+}
+
+/************************************************/
+
+
+/******* To be used for 2nd level Table Header, if the table has 2 headers ********/
+
+.HeaderRowBottom
+{
+    background-color:#89BDD5;
+    font-family: Arial,Verdana;
+    font-size: 8pt;
+    color: #FFFFFF;
+    font-weight: bold;
+    height:20px;
+}
+
+/**********************************************************************************/
+
+
+
+.LightBGColoredCell
+{
+    background-color:#F7F6F3;
+}
+
+
+.DataTable
+{
+    border: 1px solid #619CBE;
+    background-color:#F7F6F3;
+}
+.DataTableRow
+{
+    border-bottom: 3px solid #FF0000;
+}
+
+
+
+
+DropDownListDisabled
+{
+	BORDER-RIGHT: #D4FFFF 1px double; BORDER-TOP: #D4FFFF 1px double; 
+	BORDER-LEFT: #D4FFFF 1px double; BORDER-BOTTOM: #D4FFFF 1px double;
+	font-family: Verdana;
+    font-size: 8pt;
+    /*color: #005693;*/
+    background-color: #D4FFFF;
+    font-weight: normal;
+}
+
+.HtmlImageButton
+{
+    cursor:hand;
+}
+
+
+
+/* To give a light bottom border under rows of a grid/table */
+
+.TableRowBottomBorder
+{
+    border-bottom: 6px solid #E7E3DA;
+}
+/* ******************************************************* */
+.GridRowBottomBorder
+{
+    border-bottom: 1px solid #CCCCCC;
+}
+.GridRowBottomBorder_padding
+{
+    border-bottom: 1px solid #CCCCCC;
+    padding-left:2px;
+}
+
+
+.HeadingText
+{
+    font-family: Verdana;
+    font-size: 10pt;
+    color: #005693;
+    font-weight: bold;
+}
+
+.ModuleTitle
+{
+    font-family: Verdana;
+    font-size: 13pt;
+    color: #005693;
+    font-weight: bold;
+}
+/*To Give Border to Cells for logical division of data*/
+.LeftBorder
+{
+    border-left: 1px solid #000000;
+    border-top:1px solid #000000;
+}
+
+.RightBorder
+{
+    border-right: 1px solid #000000;
+    border-top:1px solid #000000;
+}
+
+.LeftRightBorder
+{
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
+    border-top:1px solid #000000;
+}
+.TableContentText_Underlined_LeftBorder
+{
+    font-family: Arial,Verdana;
+    font-size: 8pt;
+    color: #005693;
+    /*font-weight: normal;*/
+    line-height:16pt;
+    border-bottom: 1px solid #E7E3DA;
+    border-left: 1px solid #FFFFFF;
+}
+.TableContentText_Underlined_RightBorder
+{
+    font-family: Arial,Verdana;
+    font-size: 8pt;
+    color: #005693;
+    /*font-weight: normal;*/
+    line-height:16pt;
+    border-bottom: 1px solid #E7E3DA;
+    border-right: 1px solid #FFFFFF;
+}
+.LableText_WhiteBold
+{
+	font-family: Arial,Verdana;
+    font-size: 8pt;
+    color: #FFFFFF;
+    font-weight: bold;
+    height:20px;
+}
+/*To Give Border to Cells for logical division of data*/
+/* To give back color to input control */
+.MenuTextBackColor
+{
+    font-family: Verdana;
+    font-size: 8pt;
+    color: #005693;
+    font-weight: normal;
+    line-height:16pt;
+    background-color:#F7F6F3;
+}
+.TextBoxBackColor {
+	BORDER-RIGHT: #000000 1px double; BORDER-TOP: #000000 1px double; 
+	BORDER-LEFT: #000000 1px double; BORDER-BOTTOM: #000000 1px double;
+	font-family: Verdana;
+    font-size: 8pt;
+    color: #005693;
+    font-weight: normal;
+    line-height:16pt;
+    background-color:#F7F6F3;
+}
+
+.GridRowStyle
+{
+    border-bottom: 6px solid #E7E3DA;
+    height:28px;
+}
+
+/*Login Table Styles*/
+.LoginTable
+{
+	color:#333333;
+	font-family:Arial,Verdana;
+	font-size:0.8em;
+	border: 1px solid #619CBE;
+	background-color:#F7F6F3;
+}
+
+.LoginTableHeading
+{
+	color:White;
+	background-color:#619CBE;
+	font-size:0.9em;
+	font-weight:bold;
+}
+
+.TableContentText_Underlined_Bold
+{
+    font-family: Arial,Verdana;
+    font-size: 8pt;
+    color: #005693;
+    font-weight: bold;
+    line-height:16pt;
+    border-bottom: 1px solid #E7E3DA;
+}
+/*Login Table Styles*/
+
+
+.TextBoxRight 
+{
+	font-family: Verdana;
+    font-size: 7pt;
+    color: #005693;
+	BORDER-RIGHT: #000000 1px double; BORDER-TOP: #000000 1px double; 
+	BORDER-LEFT: #000000 1px double; BORDER-BOTTOM: #000000 1px double;
+    /*font-weight: normal;*/
+    text-align: right;
+ 
+    /*padding-right:3px;*/
+}
+/*.TextBoxLeft 
+{
+	font-family: Verdana;
+    font-size: 7pt;
+    color: #005693;
+	BORDER-RIGHT: #000000 1px double; BORDER-TOP: #000000 1px double; 
+	BORDER-LEFT: #000000 1px double; BORDER-BOTTOM: #000000 1px double;
+   font-weight: normal;
+    text-align: left;
+    padding-right:3px;
+}*/ /**/
+.TextBoxCenter 
+{
+	font-family: Verdana;
+    font-size: 8pt;
+    color: #005693;
+	BORDER-RIGHT: #000000 1px double; BORDER-TOP: #000000 1px double; 
+	BORDER-LEFT: #000000 1px double; BORDER-BOTTOM: #000000 1px double;
+    /*font-weight: normal;*/
+    text-align: center;
+}
+.TextBoxCenterSmall
+{
+	font-family: Verdana;
+    font-size: 7pt;
+    color: #005693;
+	BORDER-RIGHT: #000000 1px double; BORDER-TOP: #000000 1px double; 
+	BORDER-LEFT: #000000 1px double; BORDER-BOTTOM: #000000 1px double;
+    /*font-weight: normal;*/
+    text-align: center;
+}
+
+.LabelCenter 
+{
+	font-family: Verdana;
+    font-size: 8pt;
+    color: #005693;
+	BORDER-RIGHT: #000000 1px double; BORDER-TOP: #000000 1px double; 
+	BORDER-LEFT: #000000 1px double; BORDER-BOTTOM: #000000 1px double;
+    /*font-weight: normal;*/
+    text-align: center;    
+}
+
+.LabelCodes
+{
+	font-family: Verdana;
+    font-size: 6pt;
+    color: #005693;
+	BORDER-RIGHT: #005693 1px double; BORDER-TOP: #005693 1px double; 
+	BORDER-LEFT: #005693 1px double; BORDER-BOTTOM: #005693 1px double;
+    text-align:center;
+    height:15px;
+    width:80px;
+    vertical-align:middle;
+    padding-bottom:1px;
+    
+}
+
+.LabelNotes
+{
+	font-family: Verdana;
+    font-size: 8pt;
+    color:  #FFCC66;
+    background-color : #5d7b9d;
+    text-align: center;
+    vertical-align:bottom; 
+}
+
+
+.LabelCodes2
+{
+	font-family: Verdana;
+    font-size: 8pt;
+    color: #005693;
+	BORDER-RIGHT: #000000 1px double; BORDER-TOP: #000000 1px double; 
+	BORDER-LEFT: #000000 1px double; BORDER-BOTTOM: #000000 1px double;
+    text-align: center;
+    height:15px;
+    vertical-align:middle;
+    padding-bottom:0px;
+    
+}
+
+
+
+.TextBoxRightDisabled 
+{
+	font-family: Verdana;
+    font-size: 7pt;
+    color: #005693;
+	BORDER-RIGHT: #000000 1px double; BORDER-TOP: #000000 1px double; 
+	BORDER-LEFT: #000000 1px double; BORDER-BOTTOM: #000000 1px double;
+    /*font-weight: normal;*/
+    text-align: right;
+    background-color:#CCCCCC;
+    
+    
+}
+.TextBoxDisabled 
+{
+	font-family: Verdana;
+    font-size: 7pt;
+    color: #005693;
+	BORDER-RIGHT: #000000 1px double; BORDER-TOP: #000000 1px double; 
+	BORDER-LEFT: #000000 1px double; BORDER-BOTTOM: #000000 1px double;
+    /*font-weight: normal;*/
+    text-align: left;
+    background-color:#CCCCCC;
+    
+    
+}
+
+.TextBoxDisabled1 
+{
+	font-family: Verdana;
+    font-size: 7pt;
+    color: #CCCCCC;
+	BORDER-RIGHT: #000000 1px double; BORDER-TOP: #000000 1px double; 
+	BORDER-LEFT: #000000 1px double; BORDER-BOTTOM: #000000 1px double;
+    /*font-weight: normal;*/
+    text-align: left;
+    background-color:#CCCCCC;
+    
+    
+}
+.TextBoxCenterDisabled 
+{
+font-family: arial,verdana,helvetica,sans-serif;
+    font-size: 8pt;
+    border: 1px solid #BDC4CE;
+    padding-left: 1;
+    padding-right: 1;
+    padding-top: 1;
+    padding-bottom: 1;
+    color: #005693;
+    background-color:#CCCCCC;
+    text-align: center;
+    
+}
+.TextBoxRightDisabledPink 
+{
+font-family: arial,verdana,helvetica,sans-serif;
+    font-size: 8pt;
+    border: 1px solid #BDC4CE;
+    padding-left: 1;
+    padding-right: 1;
+    padding-top: 1;
+    padding-bottom: 1;
+    color: #005693;
+    background-color:#FFECFF;
+    text-align: right;
+    
+}
+
+.TextBoxRightDisabledPinkBorder
+{
+font-family: arial,verdana,helvetica,sans-serif;
+    font-size: 8pt;
+    border: 1px solid #BDC4CE;
+    padding-left: 1;
+    padding-right: 1;
+    padding-top: 1;
+    padding-bottom: 1;
+    color: #FFFFFF;
+    background-color:#FF0000;
+    text-align: right;
+    BORDER-RIGHT: #000000 1px double; BORDER-TOP: #000000 1px double; 
+	BORDER-LEFT: #000000 1px double; BORDER-BOTTOM: #000000 1px double;
+    
+}
+
+.TextBoxRightDisabledGreenBorder
+{
+font-family: arial,verdana,helvetica,sans-serif;
+    font-size: 8pt;
+    padding-left: 1;
+    padding-right: 1;
+    padding-top: 1;
+    padding-bottom: 1;
+    color: #005693;
+    background-color:#C9E0C8;
+    text-align: right;
+    BORDER-RIGHT: #157013 1px double; BORDER-TOP: #157013 1px double; 
+	BORDER-LEFT: #157013 1px double; BORDER-BOTTOM: #157013 1px double;
+    
+}
+
+.TextBoxRightDisabledBlueBorder
+{
+font-family: arial,verdana,helvetica,sans-serif;
+    font-size: 8pt;
+    padding-left: 1;
+    padding-right: 1;
+    padding-top: 1;
+    padding-bottom: 1;
+    color: #005693;
+    background-color:#A5CDEA;
+    text-align: right;
+    BORDER-RIGHT: #486980 1px double; BORDER-TOP: #486980 1px double; 
+	BORDER-LEFT: #486980 1px double; BORDER-BOTTOM: #486980 1px double;
+    
+}
+
+/*
+.TextBoxTotal
+{
+font-family: arial,verdana,helvetica,sans-serif;
+    font-size: 8pt;
+    border: 1px solid #BDC4CE;
+    padding-left: 1;
+    padding-right: 1;
+    padding-top: 1;
+    padding-bottom: 1;
+    color: #000000;
+    background-color: #FFECFF;
+    text-align: right;
+    
+}
+*/
+
+.TextBoxLeft {
+	BORDER-RIGHT: #000000 1px double; BORDER-TOP: #000000 1px double; 
+	BORDER-LEFT: #000000 1px double; BORDER-BOTTOM: #000000 1px double;
+	font-family: Verdana;
+    font-size: 7pt;
+    color: #005693;
+    /*font-weight: normal;*/
+    text-align: left;
+}
+.TextBoxNoBorder {
+	BORDER-RIGHT: #000000 0px double; BORDER-TOP: #000000 0px double; 
+	BORDER-LEFT: #000000 0px double; BORDER-BOTTOM: #000000 0px double;
+	font-family: Verdana;
+    font-size: 8pt;
+    color: #005693;
+    /*font-weight: normal;*/
+    text-align: left;
+}
+.MenuTextRight
+{
+    font-family: Verdana;
+    font-size: 8pt;
+    color: #005693;
+    line-height:16pt;
+    text-align:right;
+}
+.MenuTextLeft
+{
+    font-family: Verdana;
+    font-size: 8pt;
+    color: #005693;
+    line-height:16pt;
+    text-align:left;
+}
+
+a.SmallLinks
+{
+    font-family: Verdana;
+    font-size: 10pt;
+    color: #000000;
+    text-decoration : none;
+}
+
+a.SmallLinks:hover
+{
+    font-family: Verdana;
+    font-size: 10pt;
+    color: #87CEFA;
+    text-decoration : none;
+}
+
+a.SmallLinks:visited
+{
+    font-family: Verdana;
+    font-size: 10pt;
+    color: #FFFFFF;
+    text-decoration : none;
+}
+
+.UnderConstruction
+{
+	font-family:Verdana;
+	color:Black;
+	font-size:large;
+	font-weight:bold;
+}
+.tdBorder
+	{
+	border: 1px solid #BBDAEA;
+    font-family: Verdana;
+    font-size: 7pt;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    line-height:12px;
+	}
+	
+ul 
+{
+	font-family: Verdana; 
+	font-size: 10px;
+}
+
+.td
+{
+	border: 1px solid #BBDAEA;
+}
+
+.td1
+{
+	background-color:#BBDAEA; 
+	font-weight:bold; 
+	font-size:11px; 
+	font-family:Tahoma; 
+	padding:2px 0 2px 5px;
+}
+.TableBorder
+{
+    border: 1px solid #BDC4CE;
+    color: #005693;    
+}
+
+.ulout
+{
+	 padding:3px 0px 0px 3px; margin:3px 0px 0px 7px;
+	}
+	
+.ulin
+{
+	 padding:3px 0px 0px 7px; margin:3px 0px 0px 10px;
+	 line-height:16px;
+	}
+.ulleft
+{
+	
+	 padding:0px 0px 0px 0px; margin:0px 0px 0px 0px;
+	 line-height:12px;
+}
+
+.HeadingLabel
+{    
+    BORDER-TOP: #000000 1px solid;
+    BORDER-LEFT: #000000 1px solid;
+    BORDER-BOTTOM: #000000 1px solid;
+    FONT-FAMILY: Verdana;
+    font-size: 8pt;
+    color: #005693;
+    font-weight: normal;
+    line-height:16pt;
+}
+.HeadingLabelFull
+{
+    BORDER-RIGHT: #000000 1px solid;
+    BORDER-TOP: #000000 1px solid;
+    BORDER-LEFT: #000000 1px solid;
+    BORDER-BOTTOM: #000000 1px solid;
+    FONT-FAMILY: Verdana;
+    font-size: 8pt;
+    color: #005693;
+    font-weight: normal;
+    line-height:16pt;
+}
+
+.LabelRedBold
+{
+	font-family: Verdana;
+	font-weight:bold;
+    font-size: 8pt;
+    color: #FF0000;
+    line-height:16pt;
+}
+.LabelGreenBold
+{
+	font-family: Verdana;
+	font-weight:bold;
+    font-size: 8pt;
+    color:Green;
+    line-height:16pt;
+}
+.LabelBlueBold
+{
+	font-family: Verdana;
+	font-weight:bold;
+    font-size: 8pt;
+    color:Blue;
+    line-height:16pt;
+}
+
+
+.LabelWhite
+{
+	font-family: Verdana;
+    font-size: 8pt;
+    color: #ffffff;
+    font-weight: normal;
+    line-height:16pt;
+}
+
+.NavigationBG
+{
+	background-color:#EAF1FC;
+	/*background-color:#C0D9D9;*/
+}
+.LabelSmaller
+{
+	font-family: Verdana;
+    font-size: 6.4pt;
+    color: #005693;
+    font-weight: normal;
+}
+
+.LabelBoldUnderlined
+{
+	font-family: Verdana;
+    font-size: 8pt;
+    color: #005693;
+    font-weight: bold;
+    line-height:16pt;
+    text-decoration:underline;
+}
+
+
+.LabelBoldMedium
+{
+	font-family: Verdana;
+    font-size: 7pt;
+    color: #005693;
+    font-weight: bold;
+    line-height:16pt;
+}
+
+.LabelBoldLarge
+{
+	font-family: Verdana;
+    font-size: 10pt;
+    color: #005693;
+    font-weight: bold;
+    line-height:16pt;
+}
+
+.LabelJustify
+{
+	font-family: Verdana;
+    font-size: 8pt;
+    color: #005693;
+    font-weight: normal;
+    line-height:16pt;
+    text-align:justify;
+}
+
+
+
+.LabelRight
+{
+	font-family: Verdana;
+    font-size: 8pt;
+    color: #ffffff;
+    font-weight: bold;
+    line-height:16pt;
+    text-align:right;
+	   
+	}
+
+.SuccessLabel
+{
+	font-family: Verdana;
+    font-size: 8pt;
+    color: #008000;
+    font-weight: bold;
+}
+
+
+.ErrorLabel
+{
+	font-family: Verdana;
+    font-size: 8pt;
+    color: #FF0000;
+    font-weight: normal;
+}
+	
+
+.DropDownLeft
+{
+	font-family: Verdana;
+    font-size: 7pt;
+    color: #005693;
+    font-weight: normal;
+    z-index:1;
+}
+
+
+.select
+{
+	font-family: Verdana;
+    font-size: 8pt;
+    color: #005693;
+    font-weight: normal;
+    line-height:16pt;
+    
+}
+
+
+
+.InputBrowse
+{
+    font-family: Verdana;
+    font-size: 8pt;
+    color: #005693;
+    font-weight: normal;
+    BORDER-RIGHT: #000000 1px double; BORDER-TOP: #000000 1px double; 
+	BORDER-LEFT: #000000 1px double; BORDER-BOTTOM: #000000 1px double;
+}
+
+.TextBox
+{
+	BORDER-RIGHT: #000000 1px double; BORDER-TOP: #000000 1px double; 
+	BORDER-LEFT: #000000 1px double; BORDER-BOTTOM: #000000 1px double;
+	font-family: Verdana;
+    font-size: 7pt;
+    color: #005693;
+    font-weight: normal;   
+}
+
+.TextBoxNew
+{
+	BORDER-RIGHT: #000000 1px double; BORDER-TOP: #000000 1px double; 
+	BORDER-LEFT: #000000 1px double; BORDER-BOTTOM: #000000 1px double;
+	font-family: Verdana;
+    font-size: 12pt;
+    color:Maroon ;
+    font-weight: normal;
+    background-color :#E0E0E0;   
+}
+
+.LabelTextBox
+{
+	BORDER-RIGHT: #000000 1px double; BORDER-TOP: #000000 1px double; 
+	BORDER-LEFT: #000000 1px double; BORDER-BOTTOM: #000000 1px double;
+	font-family: Verdana;
+    font-size: 8pt;
+    color: #005693;
+    font-weight: normal;
+    
+}
+.DGHeadingBorder
+{	
+    BORDER-RIGHT: #000000 1px solid;
+    BORDER-TOP: #000000 1px solid;
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 11px;
+    text-align:center;
+    BORDER-LEFT: #000000 1px solid;
+    COLOR: #ffffff;
+    BORDER-BOTTOM: #000000 1px ridge;
+    BACKGROUND-REPEAT: repeat-x;
+    FONT-FAMILY: Arial;
+    BACKGROUND-COLOR: #5D7B9D;
+    Line-Height: 18px;
+    border-width : 1px;
+    
+}
+
+.DGHeadingBorderLeft
+{	
+    BORDER-RIGHT: #000000 1px solid;
+    BORDER-TOP: #000000 1px solid;
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 11px;
+    text-align:left;
+    BORDER-LEFT: #000000 1px solid;
+    COLOR: #ffffff;
+    BORDER-BOTTOM: #000000 1px ridge;
+    BACKGROUND-REPEAT: repeat-x;
+    FONT-FAMILY: Arial;
+    BACKGROUND-COLOR: #5D7B9D;
+    Line-Height: 18px;
+    border-width : 1px;
+    padding-left : 5px;
+    
+}
+
+.DGTableBorder
+{
+    BORDER-RIGHT: #000000 1px solid;
+    BORDER-TOP: #000000 1px solid;
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 9px;
+    BORDER-LEFT: #000000 1px solid;
+    COLOR: #000000;
+    BORDER-BOTTOM: #000000 1px solid;
+    FONT-FAMILY: Verdana;
+    Line-Height: 12px;
+    padding-left : 5px;
+}
+
+.DGTableBorderNew
+{
+    BORDER-RIGHT: #000000 1px solid;
+    BORDER-TOP: #000000 1px solid;
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 9px;
+    BORDER-LEFT: #000000 1px solid;
+    COLOR: #000000;
+    BORDER-BOTTOM: #000000 1px solid;
+    FONT-FAMILY: Verdana;
+    Line-Height: 12px;
+}
+
+
+.DGFooterRight
+{	
+    BORDER-RIGHT: #000000 1px solid;
+    BORDER-TOP: #000000 1px solid;
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 11px;
+    text-align:right;
+    BORDER-LEFT: #000000 1px solid;
+    COLOR: #ffffff;
+    BORDER-BOTTOM: #000000 1px ridge;
+    BACKGROUND-REPEAT: repeat-x;
+    FONT-FAMILY: Arial;
+    BACKGROUND-COLOR: #5D7B9D;
+    Line-Height: 12px
+}
+
+.DGFooterLabel
+{	
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 11px;
+    text-align:right;
+    COLOR: #ffffff;
+    FONT-FAMILY: Arial;
+    Line-Height: 12px;
+    width:100%;
+}
+
+.DataGrid
+{
+	Color :White;
+	Border-Color :Black;
+	Border-Width : 1px;
+	width : 100%;
+}
+
+
+.panel{
+    border: solid 1px #000000; 
+    background-color:#EAF1FC;
+}
+.panelBorder{
+    
+    background-color:#EAF1FC;
+}
+
+.button
+{
+    font-family: arial,verdana,helvetica,sans-serif;
+    font-size: 8pt;
+    color: #000000;
+    border: 1px outset #000000;
+    background-color: #FFFFFF;
+}
+.buttonclicked
+{
+    font-family: arial,verdana,helvetica,sans-serif;
+    font-size: 8pt;
+    color: #000000;
+    border: 1px outset #000000;
+    background-color: #EAF1FC;
+}
+
+.disabledbutton
+{
+    font-family: arial,verdana,helvetica,sans-serif;
+    font-size: 8pt;
+    color: #000000;
+    border: 1px outset #000000;
+    background-color: #FFFFFF;
+    cursor:text;
+}
+.submit
+{
+    font-family: arial,verdana,helvetica,sans-serif;
+    font-size: 8pt;
+    color: #000000;
+    border: 1px outset #000000;
+    background-color: #FFFFFF;
+}
+
+.RadioButton
+{
+	padding:0px 0px 0px 0px;
+	margin:0px 0px 0px 0px;
+	font-family: Verdana;
+    font-size: 8pt;
+    color: #005693;
+    font-weight: normal;
+}
+
+.Text
+{
+	BORDER-RIGHT: #000000 1px double; BORDER-TOP: #000000 1px double; 
+	BORDER-LEFT: #000000 1px double; BORDER-BOTTOM: #000000 1px double;
+	font-family: Verdana;
+    font-size: 8pt;
+    color: #005693;
+    font-weight: normal;
+    
+}
+.LeftHeadingText
+{
+	font-family:Arial;
+	font-size:11px;
+	font-weight:bold;
+	color:Navy;
+	margin:0 0 0 0;
+	padding:0 0 0 0;
+	line-height:12px
+}
+
+
+transOFF {width: 100%; background-color: #EAF1FC;border:1px solid black; }
+transON  {width: 100%; background-color: #EAF1FC;
+	opacity:.90;filter: alpha(opacity=90); -moz-opacity: 0.9;border:1px solid black; 
+	z-index:99;
+	}
+
+
+.RowMouseOver
+{
+    background-color:#D7D7FF;
+}
+
+.RowMouseOut
+{
+    background-color:#FFFFFF;
+}
+
+.TextBoxLabel
+{
+	background-color:#EAF1FC;
+	BORDER-RIGHT: #000000 0px double; BORDER-TOP: #000000 0px double; 
+	BORDER-LEFT: #000000 0px double; BORDER-BOTTOM: #000000 0px double;
+	font-family: Verdana;
+    font-size: 8pt;
+    color: #000000;
+    font-weight: normal;
+    
+    
+}
+
+.TdLeftRedBorder
+{
+	border:2px;
+	border-left:#FF0000 2px double;
+}
+
+
+
+
+
+
+
+
+
+/* IncomeTax Related Styles */
+
+
+.TableItemRow
+{
+	background-color:#FFFFFF;
+	font-family: Verdana;
+    font-size: 8pt;
+    color: #005693;
+    font-weight: normal;
+    line-height:16pt;
+}
+
+.TableAlternatingRow
+{
+	/*background-color:#00FF00;0*/
+	background-color:#EAF1FC;
+	font-family: Verdana;
+    font-size: 8pt;
+    color: #005693;
+    font-weight: normal;
+    line-height:16pt;
+}
+
+.TableSectionHeaderRow
+{
+	background-color:#73A6C4;
+	font-family: Verdana;
+    font-size: 8pt;
+    color: #FFFFFF;
+    font-weight: bold;
+    line-height:18pt;
+    
+}
+
+.TableSubSectionHeaderRow
+{
+	background-color:#A9DDDD;
+	font-family: Verdana;
+    font-size: 8pt;
+    color: #FFFFFF;
+    font-weight: bold;
+    line-height:18pt;
+    text-align:center;
+}
+
+.TableRowBottomBorderDotted
+{
+    border-bottom: #CCCCCC 1px dotted;
+    
+}
+
+
+
+
+
+
+
+
+
+
+.DGTableBorder_IT
+{
+    BORDER-RIGHT: #73A6C4 1px solid;
+    BORDER-TOP: #73A6C4 1px solid;
+    BORDER-LEFT: #73A6C4 1px solid;
+    BORDER-BOTTOM: #73A6C4 1px solid;
+    Border-width : 1px;
+    font-family: Verdana;
+    font-size: 8pt;
+    color: #73A6C4;
+    font-weight: normal;
+    line-height:12pt;
+    padding-left : 5px;
+}
+
+
+.DGHeadingBorder_IT
+{	
+    BORDER-RIGHT: #73A6C4 1px solid;
+    BORDER-TOP: #73A6C4 1px solid;
+    BORDER-BOTTOM: #73A6C4 1px ridge;
+    BORDER-LEFT: #73A6C4 1px solid;
+    Border-width : 1px;
+    BACKGROUND-COLOR: #73A6C4;
+    BACKGROUND-REPEAT: repeat-x;
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 8pt;
+    FONT-FAMILY: Arial;
+    COLOR: #ffffff;
+    Line-Height: 12pt;  
+}
+
+.DGFooter_IT
+{	
+    BORDER-RIGHT: #73A6C4 1px solid;
+    BORDER-TOP: #73A6C4 1px solid;
+    BORDER-BOTTOM: #73A6C4 1px ridge;
+    BORDER-LEFT: #73A6C4 1px solid;
+    Border-width : 1px;
+    BACKGROUND-COLOR: #FFFFFF;
+    BACKGROUND-REPEAT: repeat-x;
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 8pt;
+    FONT-FAMILY: Arial;
+    COLOR: #ffffff;
+    Line-Height: 12pt;  
+}
+
+.DGFooterNoBorder_IT
+{	
+    BACKGROUND-COLOR: #FFFFFF;
+    border:none;
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 8pt;
+    FONT-FAMILY: Arial;
+    COLOR: #005693;
+    Line-Height: 12pt;  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* This will be used in all the textboxes whose value if set as a result of any sort of calculation */
+.TextBoxCaclulatedAmount
+{
+	font-family: arial,verdana,helvetica,sans-serif;
+    font-size: 8pt;
+    color:Black;
+    BORDER-RIGHT: #000000 1px double; BORDER-TOP: #000000 1px double; 
+	BORDER-LEFT: #000000 1px double; BORDER-BOTTOM: #000000 1px double;
+    padding-left: 1;
+    padding-right: 1;
+    padding-top: 1;
+    padding-bottom: 1;
+    color: #005693;
+    background-color: #FFFACD;
+    text-align: right;
+    
+}
+
+/* This will be used in all the places where an amount is transffered to another form, or is one of the key amounts of the return. */
+/* For Example ........... in case of annexures, the value to be returned from the annexure will use this class */
+.TextBoxHilighted
+{
+	font-family: Verdana;
+    font-size: 8pt;
+    color:Black;
+    BORDER-RIGHT: #FF0000 1px double; BORDER-TOP: #FF0000 1px double; 
+	BORDER-LEFT: #FF0000 1px double; BORDER-BOTTOM: #FF0000 1px double;
+    padding-left: 1;
+    padding-right: 1;
+    padding-top: 1;
+    padding-bottom: 1;
+    color: #005693;
+    background-color: #FFFACD;
+    text-align: left;
+    
+}
+
+.TextBoxRightHilighted
+{
+	font-family: Verdana;
+    font-size: 8pt;
+    color:Black;
+    BORDER-RIGHT: #FF0000 1px double; BORDER-TOP: #FF0000 1px double; 
+	BORDER-LEFT: #FF0000 1px double; BORDER-BOTTOM: #FF0000 1px double;
+    padding-left: 1;
+    padding-right: 1;
+    padding-top: 1;
+    padding-bottom: 1;
+    color: #005693;
+    background-color: #FFFACD;
+    text-align: right;
+    
+}
+
+.TextBoxHilightedSmall
+{
+	font-family: Verdana;
+    font-size: 7pt;
+    color: #005693;
+    BORDER-RIGHT: #FF0000 1px double; BORDER-TOP: #FF0000 1px double; 
+	BORDER-LEFT: #FF0000 1px double; BORDER-BOTTOM: #FF0000 1px double;
+    text-align: center;
+    vertical-align:middle;    
+}
+
+.TextBoxRightHilightedSmall
+{
+	font-family: Verdana;
+    font-size: 7pt;
+    color: #005693;
+    BORDER-RIGHT: #FF0000 1px double; BORDER-TOP: #FF0000 1px double; 
+	BORDER-LEFT: #FF0000 1px double; BORDER-BOTTOM: #FF0000 1px double;
+    text-align: right;
+    vertical-align:middle;
+    height:14px;  
+}
+
+/* This will be used in all the places where an amount is received in the textbox (for example...where values from annexures are received) */
+.TextBoxReceivedAmount_IT
+{
+	font-family: Verdana;
+    font-size: 7pt;
+    color: #000000;
+	BORDER-RIGHT: #005693 1px double; BORDER-TOP: #005693 1px double; 
+	BORDER-LEFT: #005693 1px double; BORDER-BOTTOM: #005693 1px double;
+    text-align: right;
+    background-color: #ECFFEC;   
+    
+}
+
+
+.TextBoxLeftBlueBorder
+{
+	font-family: Verdana;
+    font-size: 7pt;
+    color: #005693;
+	BORDER-RIGHT: #005693 1px double; BORDER-TOP: #005693 1px double; 
+	BORDER-LEFT: #005693 1px double; BORDER-BOTTOM: #005693 1px double;
+    /*font-weight: normal;*/
+    text-align: left;
+    /*padding-right:3px;*/
+}
+
+
+.TextBoxLeftBlueBorder_Large
+{
+	font-family: Verdana;
+    font-size: 9pt;
+    color: #005693;
+	BORDER-RIGHT: #005693 1px double; BORDER-TOP: #005693 1px double; 
+	BORDER-LEFT: #005693 1px double; BORDER-BOTTOM: #005693 1px double;
+    /*font-weight: normal;*/
+    text-align: left;
+    /*padding-right:3px;*/
+}
+
+
+
+.TextBoxLeftDisabled
+{
+	font-family: Verdana;
+    font-size: 7pt;
+    color: #005693;
+    background-color :#DBDBDB;
+	BORDER-RIGHT: #C0C0C0 1px double; BORDER-TOP: #C0C0C0 1px double; 
+	BORDER-LEFT: #C0C0C0 1px double; BORDER-BOTTOM: #C0C0C0 1px double;
+    text-align: left;
+}
+
+.TextBoxRightDisabled
+{
+    font-family: Verdana;
+    font-size: 7pt;
+    color: #005693;
+	BORDER-RIGHT: #000000 1px double; BORDER-TOP: #000000 1px double; 
+	BORDER-LEFT: #000000 1px double; BORDER-BOTTOM: #000000 1px double;
+    /*font-weight: normal;*/
+    text-align: right;
+    background-color:#CCCCCC;
+}
+
+.TextBoxCenterDisabled
+{
+	font-family: Verdana;
+    font-size: 7pt;
+    color: #005693;
+	background-color :#DBDBDB;
+	BORDER-RIGHT: #C0C0C0 1px double; BORDER-TOP: #C0C0C0 1px double; 
+	BORDER-LEFT: #C0C0C0 1px double; BORDER-BOTTOM: #C0C0C0 1px double;
+    text-align: center;
+}
+
+
+.TextBoxRightBlueBorder
+{
+	font-family: Verdana;
+    font-size: 7pt;
+    color: #005693;
+	BORDER-RIGHT: #005693 1px double; BORDER-TOP: #005693 1px double; 
+	BORDER-LEFT: #005693 1px double; BORDER-BOTTOM: #005693 1px double;
+    text-align: right;
+}
+
+.TextBoxRightBlueBorderSmall
+{
+	font-family: Verdana;
+    font-size: 6pt;
+    color: #005693;
+	BORDER-RIGHT: #005693 1px double; BORDER-TOP: #005693 1px double; 
+	BORDER-LEFT: #005693 1px double; BORDER-BOTTOM: #005693 1px double;
+    /*font-weight: normal;*/
+    text-align: right;
+    /*padding-right:3px;*/
+}
+
+
+.TextBoxCenterBlueBorder
+{
+	font-family: Verdana;
+    font-size: 8pt;
+    color: #005693;
+	BORDER-RIGHT: #005693 1px double; BORDER-TOP: #005693 1px double; 
+	BORDER-LEFT: #005693 1px double; BORDER-BOTTOM: #005693 1px double;
+    /*font-weight: normal;*/
+ 
+    text-align: center;
+}
+
+
+.TextBoxCenterBlueBorderSmall
+{
+	font-family: Verdana;
+    font-size: 6pt;
+    color: #005693;
+    height:13px;
+	BORDER-RIGHT: #005693 1px double; BORDER-TOP: #005693 1px double; 
+	BORDER-LEFT: #005693 1px double; BORDER-BOTTOM: #005693 1px double;
+    text-align: center;
+    vertical-align:middle;
+}
+
+
+/* This will be used in all the textboxes whose value if set as a result of any sort of calculation IT RETURNS 2007*/
+.TextBoxCaclulatedAmountBlueBorder
+{
+	font-family: Verdana;
+    font-size: 7pt;
+    color: #005693;
+	BORDER-RIGHT: #005693 1px double; BORDER-TOP: #005693 1px double; 
+	BORDER-LEFT: #005693 1px double; BORDER-BOTTOM: #005693 1px double;
+	padding-left: 1;
+    padding-right: 1;
+    padding-top: 1;
+    padding-bottom: 1;    
+    background-color: #FFFACD;
+    text-align: right;
+    
+}
+/* This will be used in all the textboxes whose value is different from the calculated value*/
+.TextBoxDifferntCaclulatedAmountBlueBorder
+{
+	font-family: Verdana;
+    font-size: 7pt;
+    color: #005693;
+	BORDER-RIGHT: #005693 1px double; BORDER-TOP: #005693 1px double; 
+	BORDER-LEFT: #005693 1px double; BORDER-BOTTOM: #005693 1px double;
+	padding-left: 1;
+    padding-right: 1;
+    padding-top: 1;
+    padding-bottom: 1;    
+    background-color: #AA0000;
+    text-align: right;
+    
+}
+/*////////////////////////*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+a
+{
+    font-family: Verdana;
+    font-size: 8pt;
+    color: #005693;
+    font-weight : normal;
+    text-decoration : none;
+}
+
+a:hover
+{
+    font-family: Verdana;
+    font-size: 8pt;
+    color: #005693;
+    text-decoration : underline;
+}
+
+a:visited
+{
+    font-family: Verdana;
+    font-size: 8pt;
+    color: #005693;
+    font-weight : normal;
+}
+
+
+
+
+
+
+
+
+
+
+.VerticalHeader 
+{
+	background-color:#73A6C4;
+	font-family: Arial;
+    font-size: 8pt;
+    color: #FFFFFF;
+    font-weight: bold;
+    line-height:18pt;
+	writing-mode: tb-rl;
+	filter: flipv fliph;
+}
+
+
+
+
+
+
+
+
+
+.Button_IT
+{
+	font-family: Verdana;
+    font-size: 8pt;
+    color: #005693;
+    font-weight: bold;
+    line-height:12pt;
+}
+
+
+
+
+
+
+
+.LabelSelectedHighlighted
+{
+    font-family: Arial;
+    font-size: 8pt;
+    padding-left: 5px;
+    padding-right: 5px;   
+    line-height:12px;
+    color:#008000;
+    font-weight:bold;
+
+}
+
+
+.InfraGridCellPadding
+{
+	padding-left:6px;
+	padding-right:6px;
+	}
+	
+	
+.TdPaddingAlignLeft
+{
+	text-align:left;
+	padding-left:5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.LeftMenueBackColor
+{
+	background-color: #EAF1FC;
+	border-color:#B4B9C8;
+}
+
+.BoxTitle
+{
+	border:solid 1px #B4B9C8;
+	Font-Size:smaller;
+	font-family :Verdana;
+	color: #003366;
+	background-color:#CCCCCC;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* NEW CUSTOMS STYLES */
+
+
+
+
+
+
+.Label
+{
+	font-family: Verdana;
+    font-size: 10pt;
+    /*color: #005693;*/
+    color:Black;
+    font-weight: normal;
+    line-height:16pt;
+}
+.LabelBold
+{
+	font-family: Verdana;
+    font-size: 10pt;
+    color: #005693;
+    font-weight: bold;
+    line-height:16pt;
+}
+
+
+
+.DropDownList
+{
+	font-family: Verdana;
+    font-size: 8pt;
+    color: #005693;
+    font-weight: normal;
+    line-height:16pt;
+    z-index : -1;
+}
+
+
+
+
+/*
+INPUT.Textbox 
+{
+	BORDER-RIGHT: #000000 1px double; BORDER-TOP: #000000 1px double; 
+	BORDER-LEFT: #000000 1px double; BORDER-BOTTOM: #000000 1px double;
+	font-family: Verdana;
+    font-size: 17pt;
+    color: #005693;
+    font-weight: normal;
+}
+*/
+INPUT.TextArea 
+{
+	BORDER-RIGHT: #000000 1px double; BORDER-TOP: #000000 1px double; 
+	BORDER-LEFT: #000000 1px double; BORDER-BOTTOM: #000000 1px double;
+	font-family: Verdana;
+    font-size: 17pt;
+    color: #005693;
+    font-weight: normal;
+}
+
+
+INPUT.TextboxDisabled 
+{
+	BORDER-RIGHT: #000000 1px double; BORDER-TOP: #000000 1px double; 
+	BORDER-LEFT: #000000 1px double; BORDER-BOTTOM: #000000 1px double;
+	font-family: Verdana;
+    font-size: 6pt;
+    background-color: #C0C0C0;
+    font-weight: normal;
+}
+
+
+
+
+
+
+
+.HeadingStyleWithBG
+{
+    background-color: #005694;
+    font-family:Arial;
+    font-size:11pt;
+    font-weight:bold;
+    color:#FFFFFF;
+    /*vertical-align:bottom;*/
+}
+
+
+.HeaderStyle
+{
+    background-image:url(../../images/header-bg.gif);
+    color:#FFFFFF;
+    font-size:7pt;
+    font-family:Verdana;
+    font-weight:bold;
+    height:20px;
+    padding-left:3px;
+}
+
+.HeaderStyle_SmallFont
+{
+    background-image:url(../../images/header-bg.gif);
+    color:#FFFFFF;
+    font-weight:bold;
+    font-size:7pt;
+    font-family:Verdana;
+    height:18px;
+}
+
+.AlternatingItemStyle
+{
+    background-color:#D9ECFF;
+    font-family:Verdana;
+    font-size:7pt;
+    color:#000000;
+    padding-left:5px;
+}
+.ItemStyle
+{
+    background-color:#FFFFFF;
+    font-family:Verdana;
+    font-size:7pt;
+    color:#000000;
+    padding-left:5px;
+}
+
+.ItemStyleSmallFont
+{
+    background-color: #FFFFFF;
+    font-family: Arial;
+    font-size: 27pt;
+    color: #000000;
+    padding-left: 5px;
+}
+
+.FooterStyle
+{
+    background-image:url(../../images/header-bg.gif);
+    color:#FFFFFF;
+    font-weight:bold;
+    height:18px;
+}
+
+.PanelStyle
+{
+	background-color: #EAF1FC;
+	border-color: #B4B9C8;
+	border-style: solid;
+	border-width: 1pt;
+}
+
+.BlueBG
+{
+	background-color: #005694;
+}
+
+
+.LightBlueBG
+{
+	background-color:#EAF1FC;
+}
+
+
+.PopUpDiv
+{
+	background-color:#005694;
+}
+
+.RightBorder
+{
+	border-right:solid 1px #005694;
+}
+
+.LeftBorder
+{
+	border-left:solid 1px #005694;
+}
+
+.DiableScreenDiv
+{
+	background-color: #C0C0C0;
+	opacity: .5;
+	filter: alpha(opacity=60);
+}
+
+.Button
+{
+	background-color: #005694;
+	border-color: #000000;
+	border-style: solid;
+	border-width: 1pt;
+	font-family: Verdana;
+    font-size: 7pt;
+    font-weight:bold;
+    color: #FFFFFF;
+    height:18px;
+    padding-left:5px;
+    padding-right:5px;
+}
+
+.Button_Disabled
+{
+	background-color: #C0C0C0;
+	border-color: #000000;
+	border-style: solid;
+	border-width: 1pt;
+	font-family: Verdana;
+    font-size: 8pt;
+    font-weight:bold;
+    color: #FFFFFF;
+    height:18px;
+    padding-left:5px;
+    padding-right:5px;
+}
+
+
+
+Table.RightMenu
+{
+	background-color:#FFFFFF;
+	width:90%;
+	border:SOLID 2px #C0C0C0;
+
+}
+
+.Heading_Blue
+{
+	font-family:Arial;
+	font-size:12px;
+	font-weight:bold;
+	color:#00509F;
+}
+.SubHeading_Black
+{
+	font-family:Verdana;
+	font-size:10px;
+	font-weight:bold;
+	color:#000000;
+}
+.Text_Black
+{
+	font-family:Arial;
+	font-size:9px;
+	font-weight:normal;
+	color:#000000;
+}
+
+A
+{
+	font-family:Arial;
+	font-size:10px;
+	font-weight:normal;
+	color:#00509F;
+}
+
+A:hover
+{
+	font-family:Arial;
+	font-size:10px;
+	font-weight:normal;
+	color:#00509F;
+	text-decoration:underline;
+}
+
+td.LeftMenuItems
+{
+	border-bottom:dotted 2px lightgrey;
+	height:26px;
+	padding-left:7px;
+}
+
+Label_Small
+{
+	font-family:Arial;
+	font-size:14px;
+	font-weight:normal;
+	color:#FF0000;
+}
+
+.PageHeadings
+{
+	font-family:Verdana;
+	font-size:16px;
+	font-weight:bold;
+	color:#00509F;
+}

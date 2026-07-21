@@ -1,0 +1,79 @@
+﻿body {
+    /* ================================
+   WHY CHOOSE US – FYP SECTION
+================================ */
+    /* main section */
+    .section.why
+
+{
+    margin-top: 80px;
+    padding: 80px 20px;
+    text-align: center;
+    background: linear-gradient(rgba(255,255,255,0.92), rgba(255,255,255,0.92)), url("../Images/stock.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* heading */
+.section.why h2 {
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+/* subtitle */
+.section.why > p {
+    color: #6b7280;
+    margin-bottom: 50px;
+    font-size: 16px;
+}
+
+/* cards row */
+.section.why .cards {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    flex-wrap: nowrap; /* 🔥 one row only */
+}
+
+/* card */
+.section.why .card {
+    background: #ffffff;
+    width: 240px;
+    padding: 28px 22px;
+    border-radius: 18px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+    /* number */
+    .section.why .card span {
+        display: block;
+        font-size: 32px;
+        font-weight: 700;
+        color: #2563eb;
+        margin-bottom: 14px;
+    }
+
+    /* title */
+    .section.why .card h4 {
+        font-size: 17px;
+        margin-bottom: 10px;
+        color: #111827;
+    }
+
+    /* description */
+    .section.why .card p {
+        font-size: 14px;
+        line-height: 1.5;
+        color: #6b7280;
+    }
+
+    /* hover */
+    .section.why .card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 14px 30px rgba(0,0,0,0.15);
+    }
+
+}

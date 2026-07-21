@@ -1,0 +1,529 @@
+﻿  .auto-style1 {
+        color: white;
+        cursor: pointer;
+        opacity: 0.9;
+        border-radius: 12px;
+        vertical-align: middle;
+        text-align: left;
+        ruby-align: center;
+        font-family: Calibri;
+        border-style: none;
+        border-color: inherit;
+        border-width: medium;
+        padding: 5px 10px;
+        background-color: #339A99;
+    }
+    .auto-style1Manifest {
+        color: white;
+        cursor: pointer;
+        opacity: 0.9;
+        border-radius: 12px;
+        vertical-align: middle;
+        text-align: left;
+        ruby-align: center;
+        font-family: Calibri;
+        border-style: none;
+        border-color: inherit;
+        border-width: medium;
+        padding: 5px 10px;
+        background-color: #339A99;
+        width: 20%;
+    }
+.GridHeaderCharge {
+    Color: #333333;
+    font-weight: bold;
+    font-size: 10pt;
+    background-color: #E9E9E9;
+    text-align: left;
+    font-family: Calibri;
+    height: 12px;
+    width:100px;
+    
+}
+.GridItemCharge {
+    Color: #333333;
+    font-weight: normal;
+    font-size: 10pt;
+    background-color: #F7F6F3;
+    text-align: left;
+    font-family: Calibri;
+    height: 12px;
+    width:100px;
+    
+}
+.loginTextBox1 {
+    width: 15%;
+    height: 13px;
+    background-image: url('../../Images/Person.JPG');
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+    padding:  2px 2px 1px 50px;
+    place-content "Search";
+}
+.PasswordTextBox1 {
+    width: 15%;
+    height: 13px;
+    background-image: url('../../Images/Pwd.png');
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+    padding: 2px 2px 1px 50px;
+}
+.loginTextBox155 {
+    width: 25%;
+    height: 15px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 2px;
+    font-size: 11px;
+    background-color: white;
+    background-image: url('../../Images/Person.JPG');
+    background-position: 10px 5px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 50px;
+}
+.loginTextBox123 {
+    width: 25px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('../images/person.jpg');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 2px 10px 2px 10px;
+}
+    .Button1 {
+        background-color: #339A99;
+        color: white;
+        padding: 5px 10px;
+        border: none;
+        cursor: pointer;
+        width: 20%;
+        opacity: 0.9;
+        border-radius: 12px;
+        vertical-align: middle;
+        text-align: left;
+        ruby-align: center;
+        font-family: Calibri;
+    }
+ .Button1old {
+            background-color: #339A99;
+            color: white;
+            padding: 5px 5px;
+            border: none;
+            cursor: pointer;
+            width: 20%;
+            opacity: 0.9;
+            border-radius: 12px;
+        }
+ .Button1Ledger {
+            background-color: #339A99;
+            color: white;
+            padding: 2px 2px;
+            border: none;
+            cursor: pointer;
+            width: 150%;
+            opacity: 0.9;
+            border-radius: 6px;
+        }
+.tdLblCss {
+    /*position: relative;*/
+    border: 0px solid #000;
+    padding: 1px;
+    width: 20%;
+}
+.tdBtnCss {
+    /*position: relative;*/
+    border: 0px solid #000;
+    padding: 1px;
+    width: 20%;
+    align-content:flex-start;
+    text-align:left;
+}
+.tdBtnCss1 {
+    /*position: relative;*/
+    border: none;
+    padding: 1px;
+    width: 20%;
+    
+    text-align: left;
+}
+.tdTxtCss {
+    /*position: relative;*/
+    border: 0px solid #000;
+    padding: 1px;
+    width: 30%;
+}
+.Button {
+    border: 1pt solid #000000;
+    background-color: #005694;
+    font-family: Arial;
+    font-size: 8pt;
+    font-weight: bold;
+    color: #FFFFFF;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+.Button12345 {
+   width:100%;
+    text-align:left;
+    border:none;
+    background-color: #CCCCCC;
+    font-family: Verdana;
+    font-size: 10pt;
+    font-weight: bold;
+    color: black;
+    height: 25px;    
+}
+.button1212 {
+    width: 100%;
+    background-color: #CCCCCC;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.9;
+    vertical-align: middle;
+    text-align: left;
+    ruby-align: center;
+    font-family: Calibri;
+    color: black;
+    font-weight: bold;
+    font-size: 12pt;
+    height: 25px;
+}
+.Button1old {
+    background-color:gray;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    width: 20%;
+    opacity: 0.9;
+    border-radius: 12px;
+}
+.Button1j {
+    background-color: #339A99;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    width: 15%;
+    opacity: 0.9;
+    border-radius: 14px;
+    font-family: Arial;
+    Font-Size: 12px;
+}
+.TextBox11 {
+    border: 1px double #000000;
+    font-family: Arial;
+    font-size: 10pt;
+    color: #005693;
+    text-align: left;
+    margin-left: 0px;
+    width: 95%;
+}
+
+.TextBox {
+    /*background: #FFF url(../images/person.jpg) no-repeat 4px 4px;*/
+    border: 1px solid #999;
+    outline: 0;
+    padding-left: 2px;
+    padding-top: 1px;
+    height: 20px;
+    width: 93%;
+    border-radius: 3px;
+    font-family: Arial;
+      Font-Size: 10px;
+    margin-left: 0px;
+}
+.TextBoxC {
+    /*background: #FFF url(../images/person.jpg) no-repeat 4px 4px;*/
+    border: 1px solid #999;
+    outline: 0;
+    padding-left: 15px;
+    padding-top: 5px;
+    height: 30px;
+    width: 40%;
+    border-radius: 6px;
+    font-family: Arial;
+    Font-Size: 10px;
+}
+* Dropdown*/
+    /*background: #FFF url(../images/person.jpg) no-repeat 4px 4px;*/
+    border: 1px solid #999;
+    outline: 0;
+    padding-left: 2;
+    padding-top: 1px;
+    height: 20px;
+    width: 95%;
+    border-radius: 3px;
+    font-family: Arial;
+     Font-Size: 10px;
+
+}
+
+.Label123 {
+    font-family: Arial;
+    font-size: 10pt;
+    color: Black;
+    text-align: left;
+}
+
+.Label {
+    /*background: #FFF url(../images/person.jpg) no-repeat 4px 4px;*/
+    /*border: 1px solid #999;*/
+    outline: 0;
+    padding-left: 2px;
+    padding-top: 1px;
+    border-radius: 3px;
+    font-family: Arial;
+    font-size: 10pt;
+    text-align: right;
+    font-weight: 100;
+   
+}
+.Label12 {
+    /*background: #FFF url(../images/person.jpg) no-repeat 4px 4px;*/
+    /*border: 1px solid #999;*/
+    
+    font-weight: 100;
+    background-color: #DFDFDF;
+    width 100%;
+    padding-top: 0px;
+}
+.TextBox122 {
+    font-family: Arial;
+    font-size: 10pt;
+    color: #005693;
+    border-right: #000000 1px double;
+    border-top: #000000 1px double;
+    border-left: #000000 1px double;
+    border-bottom: #000000 1px double;
+    text-align: left;
+    width: 95%;
+}
+
+.TextBox122 {
+    font-family: Arial;
+    font-size: 10pt;
+    color: #005693;
+    border-right: #000000 1px double;
+    border-top: #000000 1px double;
+    border-left: #000000 1px double;
+    border-bottom: #000000 1px double;
+    text-align: left;
+    width: 95%;
+}
+
+.BoxTitle {
+    border: solid 1px #339A99;
+    Font-Size: 14px;
+    font-family: Arial;
+    color: black;   /*#003366*/
+    background-color: #CCCCCC;
+    text-align: center;
+}
+.BoxTitleBtn {
+    border: solid 1px #F47F32;
+    Font-Size: 20px;
+    font-family: Arial;
+    color: black;   /*#003366*/
+    background-color: #F47F32;
+    text-align: left;
+    ruby-align:left;
+}
+.BoxTitleInv {
+    border: solid 1px #F47F32;
+    Font-Size: 20px;
+    font-family: Arial;
+    color: #F47F32;   /*#003366*/
+    background-color: white;
+    text-align: center;
+}
+.BoxTitle1 {
+    border: solid 1px #F2AD46;
+    Font-Size: 20px;
+    font-family: Arial;
+    color: white;   /*#003366*/
+    background-color: #F2AD46;
+    text-align: center;
+}
+.TextBoxHdr {
+    font-family: Arial;
+    font-size: 14pt;
+    color: #005693;
+    border-right: #000000 1px double;
+    border-top: #000000 1px double;
+    border-left: #000000 1px double;
+    border-bottom: #000000 1px double;
+    text-align: left;
+}
+
+
+
+
+.LblGridShort {
+    font-family: Arial;
+    font-size: 12pt;
+    color: Black;
+    text-align: left;
+    width: 70pt;
+}
+
+
+.Lbl {
+    font-family: Arial;
+    font-size: 10pt;
+    color: Black;
+    text-align: left;
+}
+
+
+.LabelR {
+    font-family: Arial;
+    font-size: 10pt;
+    color: gray;
+    text-align: left;
+}
+
+.LabelHdr {
+    font-family: Arial;
+    font-size: 16pt;
+    color: Black;
+    text-align: left;
+    height: 40px;
+}
+
+.ModalPopupBackground {
+    background-color: Gray;
+    filter: alpha(opacity=70);
+    opacity: 0.7;
+}
+
+.BulletListError {
+    background-color: #FFFFE7;
+    font-family: Verdana;
+    font-size: 7.5pt;
+    color: Red;
+    font-weight: bold;
+}
+
+.BulletListMessage {
+    background-color: #FFFFE7;
+    font-family: Verdana;
+    font-size: 7.5pt;
+    color: Blue;
+    font-weight: bold;
+}
+
+.GridHeaderStyle {
+    background-color: #4080AF;
+    text-align: center;
+    color: #ffffff;
+    font-family: verdana;
+    font-weight: bold;
+    font-size: 9pt;
+    height: 22px;
+}
+
+.GridAlternatingItemStyle {
+    background-color: #f7fcff;
+    font-family: Verdana;
+    font-size: 8pt;
+    color: #000000;
+    padding-left: 5px;
+}
+
+.GridItemStyle {
+    background-color: #FFFFFF;
+    font-family: Verdana;
+    font-size: 8pt;
+    color: #000000;
+    padding-left: 5px;
+}
+
+.GridPagerStyle {
+    background-color: #FFFFFF;
+    font-family: Verdana;
+    font-weight: bold;
+    font-size: 9pt;
+    color: #000000;
+}
+
+.GridFooterStyle {
+    background-color: #FFFFFF;
+    color: #000000;
+    font-weight: bold;
+    height: 18px;
+}
+
+.collapsePanel {
+    border: solid 1px #B4B9C8;
+    background-color: Transparent;
+    overflow: hidden;
+}
+
+.collapsePanelHeader {
+    background-color: #EAF1FC;
+    font-weight: bold;
+    float: none;
+    padding: 5px;
+    cursor: pointer;
+    vertical-align: middle;
+    border: solid 1px #B4B9C8;
+    font-family: Verdana;
+    font-size: small;
+}
+
+.loadingLabel {
+    font-family: Verdana;
+    font-size: 8pt;
+    font-weight: bold;
+}
+
+
+.MaskedEditFocus {
+    background-color: #ffffcc;
+    color: #000000;
+}
+
+.MaskedEditError {
+    background-color: #ffcccc;
+}
+
+.TextBoxRight {
+    font-family: Verdana;
+    font-size: 7pt;
+    color: #005693;
+    border-right: #000000 1px double;
+    border-top: #000000 1px double;
+    border-left: #000000 1px double;
+    border-bottom: #000000 1px double;
+    text-align: right;
+}
+
+.Validation {
+    font-family: Verdana;
+    font-size: 8pt;
+    color: Red;
+    font-weight: bold;
+    cursor: pointer;
+}
+.LblGrid {
+    font-family: Arial;
+    font-size: 12pt;
+    color: black;
+    text-align: left;
+    width: 150px;
+}
+    .GridStyle {
+    background-color: #4080AF;
+    text-align: center;
+    color: #ffffff;
+    font-family: verdana;
+    font-weight: bold;
+    font-size: 9pt;
+    height: 22px;
+}
