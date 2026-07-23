@@ -228,7 +228,7 @@
 
   <!-- COPYRIGHT BAR -->
   <div style="border-top:1px solid rgba(255,255,255,0.15); text-align:center; padding-top:12px; margin-top:40px; font-size:13px; color:#bbb;">
-    &copy; <script>document.write(new Date().getFullYear());</script> Logix-Soft. All rights reserved.
+    &copy; <script>document.write(new Date().getFullYear());</script> AFMS. All rights reserved.
   </div>
 </footer>
 

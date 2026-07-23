@@ -15,7 +15,6 @@ public partial class Pages_BalanceSheet : System.Web.UI.Page
 {
     string conStr = ConfigurationManager.AppSettings["ConSqlWeb"];
 
-    // PDF export ke liye latest data yahan store hoga.
     private DataTable dtIncomeData;
     private DataTable dtExpenseData;
     private decimal totalAssetsAmt;
@@ -44,55 +43,42 @@ public partial class Pages_BalanceSheet : System.Web.UI.Page
             int userId = Convert.ToInt32(Session["UserId"]);
 
             // ================= ASSETS =================
+            // FIX #1: LEFT JOIN ke ON clause mein j.Status = 'Posted' add kiya
+            // taake Draft entries balance sheet mein na aayein, aur jin
+            // accounts ki koi Posted entry nahi hai wo bhi (opening balance ke saath) dikhte rahein.
             SqlCommand cmdIncome = new SqlCommand(@"
-
-            SELECT 
-                fs.AccountCode,
-                fs.AccountDescription,
-
-                ISNULL(SUM(
-                    CASE  
-                        WHEN UPPER(LTRIM(RTRIM(j.DC))) = 'DEBIT'
-                            THEN j.Amount 
-
-                        WHEN UPPER(LTRIM(RTRIM(j.DC))) = 'CREDIT'
-                            THEN -j.Amount 
-                    END
-                ),0) + ISNULL(fs.OpeningBalance,0) AS Amount
-
-            FROM FinanceStructure fs
-
-            LEFT JOIN JournalEntry j 
-                ON fs.AccountCode = j.AccountCode
-
-            WHERE fs.ParentAccountCode = 1
-            AND fs.UserId = @UserId
-
+        SELECT 
+            fs.AccountCode,
+            fs.AccountDescription,
+            ISNULL(SUM(
+                CASE
+                    WHEN UPPER(LTRIM(RTRIM(j.DC))) = 'DEBIT' THEN j.Amount
+                    WHEN UPPER(LTRIM(RTRIM(j.DC))) = 'CREDIT' THEN -j.Amount
+                END
+            ),0) + ISNULL(fs.OpeningBalance,0) AS Amount
+        FROM FinanceStructure fs
+        LEFT JOIN JournalEntry j 
+            ON fs.AccountCode = j.AccountCode
+            AND j.Status = 'Posted'
+            AND j.UserId = @UserId
             AND (
-                    @FromDate IS NULL 
-                    OR j.TransactionDate BETWEEN @FromDate AND @ToDate
-                )
-
-            GROUP BY 
-                fs.AccountCode,
-                fs.AccountDescription,
-                fs.OpeningBalance
-
-            ORDER BY fs.AccountCode
-
-            ", con);
+                @FromDate IS NULL
+                OR j.TransactionDate BETWEEN @FromDate AND @ToDate
+            )
+        WHERE fs.ParentAccountCode = 1
+        AND fs.UserId = @UserId
+        GROUP BY
+            fs.AccountCode,
+            fs.AccountDescription,
+            fs.OpeningBalance
+        ORDER BY fs.AccountCode", con);
 
             cmdIncome.Parameters.AddWithValue("@UserId", userId);
 
-            // FIX: dono dates check karo, warna sirf toDate blank hone par
-            // Convert.ToDateTime(toDate) crash kar deta tha.
             if (!string.IsNullOrEmpty(fromDate) && !string.IsNullOrEmpty(toDate))
             {
-                cmdIncome.Parameters.AddWithValue("@FromDate",
-                    Convert.ToDateTime(fromDate));
-
-                cmdIncome.Parameters.AddWithValue("@ToDate",
-                    Convert.ToDateTime(toDate));
+                cmdIncome.Parameters.AddWithValue("@FromDate", Convert.ToDateTime(fromDate));
+                cmdIncome.Parameters.AddWithValue("@ToDate", Convert.ToDateTime(toDate));
             }
             else
             {
@@ -101,61 +87,51 @@ public partial class Pages_BalanceSheet : System.Web.UI.Page
             }
 
             DataTable dtIncome = new DataTable();
-
             new SqlDataAdapter(cmdIncome).Fill(dtIncome);
 
             gvIncome.DataSource = dtIncome;
             gvIncome.DataBind();
 
-            // ================= LIABILITIES =================
+            // ================= EQUITY =================
+            // FIX #1 (same reason as above) applied here too.
+            // NOTE: FinanceStructure ka apna "209 - Current Profit" row yahan
+            // sirf OPENING balance (pichle period ka closed profit) ke tor par
+            // aayega — ye 100000 wala static row hai, isay "Retained Earnings"
+            // jaisa hi treat karein. Current period ka profit neeche alag row
+            // (AccountCode "CPP") se aayega, taake do "209" na bane.
             SqlCommand cmdExpense = new SqlCommand(@"
-
-            SELECT 
-                fs.AccountCode,
-                fs.AccountDescription,
-
-                ISNULL(SUM(
-                    CASE 
-                        WHEN UPPER(LTRIM(RTRIM(j.DC))) = 'CREDIT'
-                            THEN j.Amount 
-
-                        WHEN UPPER(LTRIM(RTRIM(j.DC))) = 'DEBIT'
-                            THEN -j.Amount 
-                    END
-                ),0) + ISNULL(fs.OpeningBalance,0) AS Amount
-
-            FROM FinanceStructure fs
-
-            LEFT JOIN JournalEntry j 
-                ON fs.AccountCode = j.AccountCode
-
-            WHERE fs.ParentAccountCode = 2
-            AND fs.UserId = @UserId
-
+        SELECT 
+            fs.AccountCode,
+            fs.AccountDescription,
+            ISNULL(SUM(
+                CASE
+                    WHEN UPPER(LTRIM(RTRIM(j.DC))) = 'CREDIT' THEN j.Amount
+                    WHEN UPPER(LTRIM(RTRIM(j.DC))) = 'DEBIT' THEN -j.Amount
+                END
+            ),0) + ISNULL(fs.OpeningBalance,0) AS Amount
+        FROM FinanceStructure fs
+        LEFT JOIN JournalEntry j 
+            ON fs.AccountCode = j.AccountCode
+            AND j.Status = 'Posted'
+            AND j.UserId = @UserId
             AND (
-                    @FromDate IS NULL 
-                    OR j.TransactionDate BETWEEN @FromDate AND @ToDate
-                )
-
-            GROUP BY 
-                fs.AccountCode,
-                fs.AccountDescription,
-                fs.OpeningBalance
-
-            ORDER BY fs.AccountCode
-
-            ", con);
+                @FromDate IS NULL
+                OR j.TransactionDate BETWEEN @FromDate AND @ToDate
+            )
+        WHERE fs.ParentAccountCode = 2
+        AND fs.UserId = @UserId
+        GROUP BY
+            fs.AccountCode,
+            fs.AccountDescription,
+            fs.OpeningBalance
+        ORDER BY fs.AccountCode", con);
 
             cmdExpense.Parameters.AddWithValue("@UserId", userId);
 
-            // FIX: same yahan bhi
             if (!string.IsNullOrEmpty(fromDate) && !string.IsNullOrEmpty(toDate))
             {
-                cmdExpense.Parameters.AddWithValue("@FromDate",
-                    Convert.ToDateTime(fromDate));
-
-                cmdExpense.Parameters.AddWithValue("@ToDate",
-                    Convert.ToDateTime(toDate));
+                cmdExpense.Parameters.AddWithValue("@FromDate", Convert.ToDateTime(fromDate));
+                cmdExpense.Parameters.AddWithValue("@ToDate", Convert.ToDateTime(toDate));
             }
             else
             {
@@ -164,8 +140,91 @@ public partial class Pages_BalanceSheet : System.Web.UI.Page
             }
 
             DataTable dtExpense = new DataTable();
-
             new SqlDataAdapter(cmdExpense).Fill(dtExpense);
+
+            // ================= NET PROFIT =================
+            decimal totalRevenue = 0;
+            decimal totalExpenses = 0;
+
+            // FIX #2: Status='Posted' filter + date-range filter add kiya
+            // (pehle yeh query hamesha SAARI entries (Draft included, koi date
+            // filter nahi) se net profit calculate kar rahi thi, jo filtered
+            // balance sheet ke sath match nahi karta tha).
+            SqlCommand cmdRevenue = new SqlCommand(@"
+        SELECT ISNULL(SUM(
+            CASE
+                WHEN UPPER(LTRIM(RTRIM(j.DC)))='CREDIT' THEN j.Amount
+                WHEN UPPER(LTRIM(RTRIM(j.DC)))='DEBIT' THEN -j.Amount
+            END
+        ),0)
+        FROM FinanceStructure fs
+        LEFT JOIN JournalEntry j 
+            ON fs.AccountCode=j.AccountCode
+            AND j.Status = 'Posted'
+            AND j.UserId = @UserId
+            AND (
+                @FromDate IS NULL
+                OR j.TransactionDate BETWEEN @FromDate AND @ToDate
+            )
+        WHERE fs.ParentAccountCode=3
+        AND fs.UserId=@UserId", con);
+
+            cmdRevenue.Parameters.AddWithValue("@UserId", userId);
+            if (!string.IsNullOrEmpty(fromDate) && !string.IsNullOrEmpty(toDate))
+            {
+                cmdRevenue.Parameters.AddWithValue("@FromDate", Convert.ToDateTime(fromDate));
+                cmdRevenue.Parameters.AddWithValue("@ToDate", Convert.ToDateTime(toDate));
+            }
+            else
+            {
+                cmdRevenue.Parameters.AddWithValue("@FromDate", DBNull.Value);
+                cmdRevenue.Parameters.AddWithValue("@ToDate", DBNull.Value);
+            }
+            totalRevenue = Convert.ToDecimal(cmdRevenue.ExecuteScalar());
+
+            SqlCommand cmdExp = new SqlCommand(@"
+        SELECT ISNULL(SUM(
+            CASE
+                WHEN UPPER(LTRIM(RTRIM(j.DC)))='DEBIT' THEN j.Amount
+                WHEN UPPER(LTRIM(RTRIM(j.DC)))='CREDIT' THEN -j.Amount
+            END
+        ),0)
+        FROM FinanceStructure fs
+        LEFT JOIN JournalEntry j 
+            ON fs.AccountCode=j.AccountCode
+            AND j.Status = 'Posted'
+            AND j.UserId = @UserId
+            AND (
+                @FromDate IS NULL
+                OR j.TransactionDate BETWEEN @FromDate AND @ToDate
+            )
+        WHERE fs.ParentAccountCode=4
+        AND fs.UserId=@UserId", con);
+
+            cmdExp.Parameters.AddWithValue("@UserId", userId);
+            if (!string.IsNullOrEmpty(fromDate) && !string.IsNullOrEmpty(toDate))
+            {
+                cmdExp.Parameters.AddWithValue("@FromDate", Convert.ToDateTime(fromDate));
+                cmdExp.Parameters.AddWithValue("@ToDate", Convert.ToDateTime(toDate));
+            }
+            else
+            {
+                cmdExp.Parameters.AddWithValue("@FromDate", DBNull.Value);
+                cmdExp.Parameters.AddWithValue("@ToDate", DBNull.Value);
+            }
+            totalExpenses = Convert.ToDecimal(cmdExp.ExecuteScalar());
+
+            decimal netProfit = totalRevenue - totalExpenses;
+
+            // FIX #3: AccountCode "209" ke bajaye "CPP" (Current Period Profit)
+            // use kiya taake FinanceStructure ke apne static "209 - Current Profit"
+            // (jo opening/retained profit hai) se collide/duplicate na ho.
+            // Screenshot mein jo do "209" rows dikh rahi thi wahi confusion tha.
+            DataRow dr = dtExpense.NewRow();
+            dr["AccountCode"] = "CPP";
+            dr["AccountDescription"] = "Current Period Profit";
+            dr["Amount"] = netProfit;
+            dtExpense.Rows.Add(dr);
 
             gvExpense.DataSource = dtExpense;
             gvExpense.DataBind();
@@ -189,21 +248,19 @@ public partial class Pages_BalanceSheet : System.Web.UI.Page
             lblIncomeTotal.Text = totalIncome.ToString("N2");
             lblExpenseTotal.Text = totalExpense.ToString("N2");
 
-            // Export ke liye save kar lo
             dtIncomeData = dtIncome;
             dtExpenseData = dtExpense;
+
             totalAssetsAmt = totalIncome;
             totalLiabilitiesAmt = totalExpense;
 
-            // ================= MESSAGE =================
             if (string.IsNullOrEmpty(fromDate))
             {
                 lblMsg.Text = "Showing ALL records";
             }
             else
             {
-                lblMsg.Text = "Filtered from "
-                    + fromDate + " to " + toDate;
+                lblMsg.Text = "Filtered from " + fromDate + " to " + toDate;
             }
         }
     }
@@ -213,8 +270,6 @@ public partial class Pages_BalanceSheet : System.Web.UI.Page
         string fromDate = txtFromDate.Text.Trim();
         string toDate = txtToDate.Text.Trim();
 
-        // FIX 1: Agar sirf ek date bhari hai, dusri khali hai -> error dikhao,
-        // query mat chalao (crash yahin rukega).
         if (string.IsNullOrEmpty(fromDate) != string.IsNullOrEmpty(toDate))
         {
             lblMsg.Text = "Please select both From Date and To Date.";
@@ -222,7 +277,6 @@ public partial class Pages_BalanceSheet : System.Web.UI.Page
             return;
         }
 
-        // FIX 2: Agar dono dates di gayi hain, format aur From <= To validate karo.
         if (!string.IsNullOrEmpty(fromDate) && !string.IsNullOrEmpty(toDate))
         {
             DateTime dFrom, dTo;
@@ -290,15 +344,15 @@ public partial class Pages_BalanceSheet : System.Web.UI.Page
     {
         using (MemoryStream ms = new MemoryStream())
         {
-            Document doc = new Document(PageSize.A4, 30, 30, 30, 30);
+            Document doc = new Document(PageSize.A4, 30, 30, 20, 20); // reduced top/bottom margin
             PdfWriter.GetInstance(doc, ms);
             doc.Open();
 
-            Font titleFont = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 16);
-            Font sectionFont = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 12);
-            Font headerFont = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 10, BaseColor.WHITE);
-            Font cellFont = FontFactory.GetFont(FontFactory.HELVETICA, 10);
-            Font totalFont = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 11);
+            Font titleFont = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 14); // smaller
+            Font sectionFont = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 11);
+            Font headerFont = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 9, BaseColor.WHITE);
+            Font cellFont = FontFactory.GetFont(FontFactory.HELVETICA, 9);
+            Font totalFont = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 10);
 
             // ---------- HEADER WITH LOGO ----------
             string logoPath = Server.MapPath("~/Images/whitelogo.png");
@@ -311,7 +365,7 @@ public partial class Pages_BalanceSheet : System.Web.UI.Page
             if (File.Exists(logoPath))
             {
                 iTextSharp.text.Image logoImg = iTextSharp.text.Image.GetInstance(logoPath);
-                logoImg.ScaleToFit(70f, 70f);
+                logoImg.ScaleToFit(50f, 50f); // smaller logo
                 logoCell = new PdfPCell(logoImg);
             }
             else
@@ -331,7 +385,7 @@ public partial class Pages_BalanceSheet : System.Web.UI.Page
             titleCell.VerticalAlignment = Element.ALIGN_MIDDLE;
             headerTable.AddCell(titleCell);
 
-            headerTable.SpacingAfter = 8f;   // FIX: title/logo row ke neeche gap
+            headerTable.SpacingAfter = 4f; // reduced from 8f
             doc.Add(headerTable);
             // ---------- END HEADER ----------
 
@@ -341,33 +395,33 @@ public partial class Pages_BalanceSheet : System.Web.UI.Page
 
             Paragraph period = new Paragraph(periodText, cellFont);
             period.Alignment = Element.ALIGN_CENTER;
-            period.SpacingBefore = 5f;    // FIX: title se gap
-            period.SpacingAfter = 20f;    // FIX: "Assets Accounts" heading se gap
+            period.SpacingBefore = 2f;
+            period.SpacingAfter = 10f; // reduced from 20f
             doc.Add(period);
 
             // ---- ASSETS ----
             Paragraph assetsHeading = new Paragraph("Assets Accounts", sectionFont);
-            assetsHeading.SpacingAfter = 4f;
+            assetsHeading.SpacingAfter = 3f;
             doc.Add(assetsHeading);
             doc.Add(BuildAccountTable(dtIncomeData, headerFont, cellFont, new BaseColor(46, 125, 50)));
 
             Paragraph assetsTotal = new Paragraph(
                 "Total Assets: " + totalAssetsAmt.ToString("N2"), totalFont);
-            assetsTotal.SpacingBefore = 5f;
-            assetsTotal.SpacingAfter = 30f;   // FIX: pehle 20f tha, ab zyada gap Liability heading se pehle
+            assetsTotal.SpacingBefore = 3f;
+            assetsTotal.SpacingAfter = 12f; // reduced from 30f
             doc.Add(assetsTotal);
 
             // ---- LIABILITIES & EQUITY ----
             Paragraph liabHeading = new Paragraph("Liability & Equity", sectionFont);
-            liabHeading.SpacingBefore = 10f;  // FIX: extra top gap
-            liabHeading.SpacingAfter = 4f;
+            liabHeading.SpacingBefore = 4f; // reduced from 10f
+            liabHeading.SpacingAfter = 3f;
             doc.Add(liabHeading);
             doc.Add(BuildAccountTable(dtExpenseData, headerFont, cellFont, new BaseColor(198, 40, 40)));
 
             Paragraph liabTotal = new Paragraph(
                 "Total Liability & Equity: " + totalLiabilitiesAmt.ToString("N2"), totalFont);
-            liabTotal.SpacingBefore = 5f;
-            liabTotal.SpacingAfter = 20f;
+            liabTotal.SpacingBefore = 3f;
+            liabTotal.SpacingAfter = 8f; // reduced from 20f
             doc.Add(liabTotal);
 
             // ---- BALANCE CHECK ----
@@ -377,7 +431,7 @@ public partial class Pages_BalanceSheet : System.Web.UI.Page
                 : "Balance Check: NOT Balanced (Difference: " + diff.ToString("N2") + ")";
 
             Paragraph balance = new Paragraph(balanceText, totalFont);
-            balance.SpacingBefore = 10f;
+            balance.SpacingBefore = 4f; // reduced from 10f
             doc.Add(balance);
 
             doc.Close();
@@ -397,14 +451,14 @@ public partial class Pages_BalanceSheet : System.Web.UI.Page
         PdfPTable table = new PdfPTable(3);
         table.WidthPercentage = 100;
         table.SetWidths(new float[] { 20f, 50f, 30f });
-        table.SpacingAfter = 5f;
+        table.SpacingAfter = 3f;
 
         string[] headers = { "Code", "Account Name", "Amount" };
         foreach (string h in headers)
         {
             PdfPCell cell = new PdfPCell(new Phrase(h, headerFont));
             cell.BackgroundColor = headerColor;
-            cell.Padding = 5;
+            cell.Padding = 3; // reduced from 5
             table.AddCell(cell);
         }
 
@@ -412,12 +466,12 @@ public partial class Pages_BalanceSheet : System.Web.UI.Page
         {
             foreach (DataRow row in dt.Rows)
             {
-                table.AddCell(new PdfPCell(new Phrase(row["AccountCode"].ToString(), cellFont)) { Padding = 5 });
-                table.AddCell(new PdfPCell(new Phrase(row["AccountDescription"].ToString(), cellFont)) { Padding = 5 });
+                table.AddCell(new PdfPCell(new Phrase(row["AccountCode"].ToString(), cellFont)) { Padding = 3 });
+                table.AddCell(new PdfPCell(new Phrase(row["AccountDescription"].ToString(), cellFont)) { Padding = 3 });
 
                 decimal amt = Convert.ToDecimal(row["Amount"]);
                 PdfPCell amtCell = new PdfPCell(new Phrase(amt.ToString("N2"), cellFont));
-                amtCell.Padding = 5;
+                amtCell.Padding = 3;
                 amtCell.HorizontalAlignment = Element.ALIGN_RIGHT;
                 table.AddCell(amtCell);
             }
@@ -426,7 +480,7 @@ public partial class Pages_BalanceSheet : System.Web.UI.Page
         {
             PdfPCell noData = new PdfPCell(new Phrase("No records found", cellFont));
             noData.Colspan = 3;
-            noData.Padding = 5;
+            noData.Padding = 3;
             noData.HorizontalAlignment = Element.ALIGN_CENTER;
             table.AddCell(noData);
         }

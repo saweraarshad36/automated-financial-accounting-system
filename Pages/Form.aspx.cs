@@ -12,6 +12,7 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 
+
 public partial class Pages_Form : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
@@ -38,23 +39,53 @@ public partial class Pages_Form : System.Web.UI.Page
         {
             conn.Open();
 
-            string query = "SELECT Id, Username FROM Users WHERE Username=@Username AND Password=@Password";
+            // Ab hum sirf Username se row nikaal rahe hain, Password DB mein
+            // match nahi kar rahe (kyunke DB mein ab hash stored hai, plain text nahi)
+            string query = "SELECT Id, Username, Password FROM Users WHERE Username=@Username";
 
             SqlCommand cmd = new SqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@Username", username);
-            cmd.Parameters.AddWithValue("@Password", password);
 
             SqlDataReader dr = cmd.ExecuteReader();
 
             if (dr.Read())
             {
-                Session["UserId"] = Convert.ToInt32(dr["Id"]);
-                Session["Username"] = dr["Username"].ToString();
-                Session["LoginSuccess"] = "User Verified Successfully!";
-
+                string storedHash = dr["Password"].ToString();
+                int userId = Convert.ToInt32(dr["Id"]);
+                string dbUsername = dr["Username"].ToString();
                 dr.Close();
 
-                Response.Redirect("Dashboard.aspx");
+                if (PasswordHelper.VerifyPassword(password, storedHash))
+                {
+                    // Agar ye purana plain-text password tha, to ab isay hash karke
+                    // DB mein update kar dete hain (auto-migration on login).
+                    if (!storedHash.Contains(":"))
+                    {
+                        string newHash = PasswordHelper.HashPassword(password);
+
+                        using (SqlConnection migrateConn = new SqlConnection(connStr))
+                        {
+                            migrateConn.Open();
+                            string migrateQuery = "UPDATE Users SET Password=@Password WHERE Id=@Id";
+                            SqlCommand migrateCmd = new SqlCommand(migrateQuery, migrateConn);
+                            migrateCmd.Parameters.AddWithValue("@Password", newHash);
+                            migrateCmd.Parameters.AddWithValue("@Id", userId);
+                            migrateCmd.ExecuteNonQuery();
+                        }
+                    }
+
+                    Session["UserId"] = userId;
+                    Session["Username"] = dbUsername;
+                    Session["LoginSuccess"] = "User Verified Successfully!";
+
+                    Response.Redirect("Dashboard.aspx");
+                }
+                else
+                {
+                    lblErrorMessage.ForeColor = System.Drawing.Color.Red;
+                    lblErrorMessage.Text = "Invalid Username or Password!";
+                    lblErrorMessage.Visible = true;
+                }
             }
             else
             {
@@ -69,8 +100,8 @@ public partial class Pages_Form : System.Web.UI.Page
 
     protected void BtnDone1_Click(object sender, EventArgs e)
     {
-        txtUserName.Visible = true;       
-        txtUserName.Visible = true; 
+        txtUserName.Visible = true;
+        txtUserName.Visible = true;
 
         Label5.Visible = true;
         Label6.Visible = true;
@@ -127,9 +158,12 @@ public partial class Pages_Form : System.Web.UI.Page
                 return;
             }
 
+            // Naya password save karne se pehle hash kar rahe hain
+            string hashedPassword = PasswordHelper.HashPassword(newPassword);
+
             string updateQuery = "UPDATE Users SET Password=@Password WHERE Username=@Username";
             SqlCommand updateCmd = new SqlCommand(updateQuery, conn);
-            updateCmd.Parameters.AddWithValue("@Password", newPassword);
+            updateCmd.Parameters.AddWithValue("@Password", hashedPassword);
             updateCmd.Parameters.AddWithValue("@Username", username);
             updateCmd.ExecuteNonQuery();
 

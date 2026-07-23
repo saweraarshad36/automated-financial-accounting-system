@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -28,6 +29,34 @@ public partial class User_Controls_ContactUc : System.Web.UI.UserControl
             return;
         }
 
+        if (string.IsNullOrEmpty(phone))
+        {
+            lblStatus.InnerText = "Please enter your phone number.";
+            lblStatus.Style["color"] = "red";
+            return;
+        }
+
+        string selectedValue = ddl_country.Value;
+        string[] parts = selectedValue.Split('|');
+
+        string countryName = parts[0];
+        int minDigits = int.Parse(parts[1]);
+        int maxDigits = int.Parse(parts[2]);
+
+        // Sirf digits check
+        if (!Regex.IsMatch(phone, @"^\d+$"))
+        {
+            lblStatus.InnerText = "Phone number must contain digits only.";
+            lblStatus.Style["color"] = "red";
+            return;
+        }
+
+        if (phone.Length < minDigits || phone.Length > maxDigits)
+        {
+            lblStatus.InnerText = "For the selected country (" + countryName + "), phone number must be between " + minDigits + " and " + maxDigits + " digits."; lblStatus.Style["color"] = "red";
+            return;
+        }
+
         try
         {
             MailMessage mail = new MailMessage();
@@ -37,6 +66,7 @@ public partial class User_Controls_ContactUc : System.Web.UI.UserControl
             mail.Body =
                 "Name: " + name + "\n" +
                 "Email: " + email + "\n" +
+                "Country: " + countryName + "\n" +
                 "Phone: " + phone + "\n\n" +
                 "Message:\n" + message;
 
@@ -56,8 +86,11 @@ public partial class User_Controls_ContactUc : System.Web.UI.UserControl
         }
         catch (Exception ex)
         {
-            lblStatus.InnerText = "Failed to send: " + ex.Message;
-            lblStatus.Style["color"] = "red";
+            lblStatus.InnerText = ex.Message;
+            if (ex.InnerException != null)
+            {
+                lblStatus.InnerText += "<br/>" + ex.InnerException.Message;
+            }
         }
     }
 }

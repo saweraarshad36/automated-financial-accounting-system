@@ -53,6 +53,7 @@ public partial class Pages_Dashboard : System.Web.UI.Page
                 ON j.AccountCode = f.AccountCode
             WHERE f.ParentAccountCode = 3
               AND j.DC = 'Credit'
+              AND j.Status = 'Posted'
               AND j.UserId = @UserId
               AND YEAR(j.TransactionDate) = @yr
         ", con);
@@ -69,6 +70,7 @@ public partial class Pages_Dashboard : System.Web.UI.Page
                 ON j.AccountCode = f.AccountCode
             WHERE f.ParentAccountCode = 4
               AND j.DC = 'Debit'
+              AND j.Status = 'Posted'
               AND j.UserId = @UserId
               AND YEAR(j.TransactionDate) = @yr
         ", con);
@@ -79,6 +81,7 @@ public partial class Pages_Dashboard : System.Web.UI.Page
         decimal expense = Convert.ToDecimal(cmdExpense.ExecuteScalar());
 
         decimal profit = revenue - expense;
+
         //cash flow
         SqlCommand cmdCash = new SqlCommand(@"
             SELECT
@@ -97,11 +100,13 @@ public partial class Pages_Dashboard : System.Web.UI.Page
                 ),0)
             FROM JournalEntry
             WHERE UserId = @UserId
+              AND Status = 'Posted'
         ", con);
 
         cmdCash.Parameters.AddWithValue("@UserId", userId);
 
         decimal cash = Convert.ToDecimal(cmdCash.ExecuteScalar());
+
         //Prev year reve
         SqlCommand cmdPrevIncome = new SqlCommand(@"
             SELECT ISNULL(SUM(j.Amount),0)
@@ -110,6 +115,7 @@ public partial class Pages_Dashboard : System.Web.UI.Page
                 ON j.AccountCode = f.AccountCode
             WHERE f.ParentAccountCode = 3
               AND j.DC = 'Credit'
+              AND j.Status = 'Posted'
               AND j.UserId = @UserId
               AND YEAR(j.TransactionDate) = @yr
         ", con);
@@ -127,6 +133,7 @@ public partial class Pages_Dashboard : System.Web.UI.Page
                 ON j.AccountCode = f.AccountCode
             WHERE f.ParentAccountCode = 4
               AND j.DC = 'Debit'
+              AND j.Status = 'Posted'
               AND j.UserId = @UserId
               AND YEAR(j.TransactionDate) = @yr
         ", con);
@@ -197,6 +204,8 @@ public partial class Pages_Dashboard : System.Web.UI.Page
                 ON j.AccountCode = f.AccountCode
 
             WHERE YEAR(j.TransactionDate) = YEAR(GETDATE())
+              AND j.TransactionDate <= GETDATE()
+              AND j.Status = 'Posted'
               AND j.UserId = @UserId
 
             GROUP BY 

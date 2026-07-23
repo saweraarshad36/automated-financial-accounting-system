@@ -1,6 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="ContactUc.ascx.cs" Inherits="User_Controls_ContactUc" %>
-        
-       
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="ContactUc.ascx.cs" Inherits="User_Controls_ContactUc" %> 
 
 <style>
 .text-primary,
@@ -186,7 +184,7 @@
     <div class="container">
         <div class="row">
 
-            <!-- FORM BOX -->
+           
             <div class="col-lg-6">
                 <div class="phone-wrapper">
                     <div class="phone">
@@ -215,23 +213,37 @@
                                             id="inp_email" type="email" placeholder="Email" />
                                     </div>
                                 </div>
-                                <div class="col-12">
-                                    <div class="form-group">
-                                        <input runat="server" class="form-control" name="phoneno"
-                                            id="inp_phone" type="number" maxlength="11"
-                                            placeholder="Enter Phone no" />
-                                    </div>
-                                </div>
+                               <div class="col-12">
+    <div class="form-group">
+        <select runat="server" id="ddl_country" class="form-control">
+          <option value="Saudi Arabia|9|10">Saudi Arabia (+966)</option>
+<option value="Pakistan|10|11">Pakistan (+92)</option>
+<option value="India|10|10">India (+91)</option>
+<option value="USA|10|10">USA (+1)</option>
+<option value="United Kingdom|10|11">UK (+44)</option>
+<option value="United Arab Emirates|9|10">UAE (+971)</option>
+<option value="China|11|11">China (+86)</option>
+<option value="Bangladesh|11|11">Bangladesh (+880)</option>
+        </select>
+    </div>
+</div>
+<div class="col-12">
+    <div class="form-group">
+        <input runat="server" class="form-control" name="phoneno"
+            id="inp_phone" type="number" maxlength="11"
+            placeholder="Enter Phone no" />
+    </div>
+</div>
                             </div>
 
                             <div class="form-group mb-0 text-center">
-                                <!-- Button directly calls server-side method -->
+                                
                                 <asp:Button ID="btnSend" runat="server" Text="Send"
                                     CssClass="btn btn-primary btn-lg"
                                     OnClick="SendContactEmail" />
                             </div>
 
-                            <!-- Status message shown after send -->
+                           
                             <span runat="server" id="lblStatus"></span>
 
                         </div>
